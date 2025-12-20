@@ -10,7 +10,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root { --primary: #121212; --gold: #c5a059; --paper: #fcfaf7; --text: #2c3e50; }
-        * { hyphens: none !important; word-break: keep-all !important; overflow-wrap: normal !important; -webkit-hyphens: none !important; }
+        
+        /* كود حماية المحتوى: منع التظليل والنسخ */
+        * { 
+            hyphens: none !important; 
+            word-break: keep-all !important; 
+            overflow-wrap: normal !important; 
+            user-select: none; 
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
         body { font-family: 'Amiri', serif; background-color: var(--paper); margin: 0; color: var(--text); line-height: 1.8; scroll-behavior: smooth; }
         header { background-color: var(--primary); color: white; text-align: center; padding: 50px 20px; border-bottom: 5px solid var(--gold); }
         .profile-img { width: 140px; height: 140px; border-radius: 50%; border: 3px solid var(--gold); margin-bottom: 15px; object-fit: cover; background-color: #fff; }
@@ -29,6 +40,17 @@
         .whatsapp { background-color: #25d366; } .facebook { background-color: #1877f2; } .email { background-color: #ea4335; }
         .social-links a:hover { opacity: 0.8; transform: scale(1.05); }
     </style>
+
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.onkeydown = function(e) {
+            if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 86 || e.keyCode === 85 || e.keyCode === 117)) {
+                return false;
+            } else {
+                return true;
+            }
+        };
+    </script>
 </head>
 <body>
 
@@ -128,7 +150,7 @@
 كَم كُنتُ أُلقي حِملَ قَلبيَ عِندَ كَفِّكْ
 وأَقولُ: هذا السَّندُ, هذا نِصفُ طَرَفِكْ
 واليَومَ أَلفَظُ مَاضِياً كانَ كِذبَةً
-والسُّمُّ يَسري في شرايينِ اعتِرافِكْ.
+والSمُّ يَسري في شرايينِ اعتِرافِكْ.
 فَلتَذهَبِ الأَوهامُ، لَستَ سِوى سَرابْ
 فَلقَد كَشَفتَ الوَجهَ عِندَ مُنَادَمَةِ العَذابْ
 تَرَكتُ لَكَ الذِّكرى، لِتَشهَدَ أنَّني
@@ -158,7 +180,7 @@
 والأملُ نورُ صُبْحٍ قد بدا رَغَدا.
 أنا أرفضُ التقليدَ، أختارُ دربي،
 أعيشُ ذاتي، ولا أخشى بأن أُنتَقَدا.
-أنا الحقيقةُ في كفّي أُضيئُ بها،
+أنا الحقيقةُ في كفّي أُضيئُ بها,
 وإن خذلني جميعُ الناسِ، لن أرتدّا.
 أنا الذي قد عَبَرْتُ الموجَ مبتسما،
 وكنتُ للريحِ، رغمَ الهَوْلِ، مُرْتَشِدا.
@@ -360,9 +382,7 @@
 دموعي عزيزةٌ لا يراها سوى الخالقِ
 ففي مِحكمِ الآياتِ.. بَشّرَ مَن صَبَروا</div></div>
 
-    <div class="poem-card" id="p17">
-        <div class="poem-title">سَقَطَ القِناع</div>
-        <div class="poem-text">تباً لِمن جَعلَ النفاقَ لهُ رداءْ
+    <div class="poem-card" id="p17"><div class="poem-title">سَقَطَ القِناع</div><div class="poem-text">تباً لِمن جَعلَ النفاقَ لهُ رداءْ
 يا مَن غَدوتَ لِكلِّ كِذبةٍ وعاءْ
 تَبني قصوراً من زيفٍ ومن هواءْ
 والصدقُ في عينيكَ أبعدُ من سماءْ
@@ -383,8 +403,7 @@
 قالوا لِكُلِّ منَ الأسماءِ نَصيبُها
 إلّاكَ أنتَ.. فمالكَ والمَكرُماتِ لِقاءْ
 فالاسمُ يزهو بالكِرامِ وجُودِهم
-وفِعالُكَ الخَرقاءُ مَحضُ شَقاءْ</div>
-    </div>
+وفِعالُكَ الخَرقاءُ مَحضُ شَقاءْ</div></div>
 
     <div class="poem-card" id="p18"><div class="poem-title">مدارُ الشَّمْس</div><div class="poem-text">هَيْهَاتَ يُدرِكُ ما بِي كُلُّ مَن عَبَرَا
 أو يَستَبينُ بِمَوجي الصَّمتُ والكَدَرَا
@@ -403,9 +422,7 @@
 إِنْ عِشْتُ عِشْتُ بَتَاجِ العِزِّ مُلْتَحِفاً
 أَوْ مُتُّ.. مَاتَ مَعِي مَن كَانَ مُنْتَصِرَا!</div></div>
 
-    <div class="poem-card" id="p19">
-        <div class="poem-title">خلف حدود النبض</div>
-        <div class="poem-text">صبرتُ حتّى استجارَ الصبرُ من جَلَدي
+    <div class="poem-card" id="p19"><div class="poem-title">خلف حدود النبض</div><div class="poem-text">صبرتُ حتّى استجارَ الصبرُ من جَلَدي
 وسِرتُ والمِلحُ في جُرحي يُماشيني
 
 يا حارساً للسياجِ العتْـمِ مَعذرةً
@@ -424,8 +441,7 @@
 أقصى المَنافي وما في الكأسِ يسقيني
 
 حسبي من العمرِ أني صنتُ وُدّهُمُ
-وخيبتُهمْ في جحيمِ الصمتِ ترويني</div>
-    </div>
+وخيبتُهمْ في جحيمِ الصمتِ ترويني</div></div>
 
 </div>
 
