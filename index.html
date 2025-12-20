@@ -7,39 +7,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root { --primary: #121212; --gold: #c5a059; --paper: #fcfaf7; --text: #2c3e50; }
-        
-        /* حماية المحتوى */
         * { user-select: none; -webkit-user-select: none; }
-
         body { font-family: 'Amiri', serif; background-color: var(--paper); margin: 0; color: var(--text); line-height: 1.8; scroll-behavior: smooth; }
-        
         header { background-color: var(--primary); color: white; text-align: center; padding: 40px 20px; border-bottom: 5px solid var(--gold); }
         .profile-img { width: 130px; height: 130px; border-radius: 50%; border: 3px solid var(--gold); margin-bottom: 15px; object-fit: cover; background-color: #fff; }
         header h1 { font-family: 'Aref Ruqaa', serif; font-size: 2.8rem; margin: 10px 0; }
-
-        /* أزرار الدواوين */
         .diwan-switcher { text-align: center; margin: 20px 0; }
         .btn-diwan { background: var(--primary); color: var(--gold); border: 2px solid var(--gold); padding: 10px 25px; border-radius: 5px; cursor: pointer; font-family: 'Aref Ruqaa'; font-size: 1.2rem; transition: 0.3s; margin: 5px; }
         .btn-diwan.active { background: var(--gold); color: white; }
-
-        /* الفهرس */
         .index-section { background: white; max-width: 900px; margin: 20px auto; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; }
         .index-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; list-style: none; padding: 0; }
         .index-list li button { color: var(--primary); background: #f9f4eb; padding: 10px 18px; border-radius: 25px; font-weight: bold; border: 1px solid var(--gold); cursor: pointer; font-family: 'Amiri'; font-size: 1.1rem; transition: 0.3s; }
         .index-list li button:hover { background: var(--gold); color: white; }
-
-        /* الحاوية والقصائد */
         .container { max-width: 850px; margin: 0 auto 50px; padding: 20px; }
         .poem-content { display: none; background: white; padding: 45px 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center; border-right: 10px solid var(--gold); animation: fadeIn 0.4s; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-
         .poem-title { font-family: 'Aref Ruqaa', serif; font-size: 2.2rem; color: var(--primary); margin-bottom: 25px; border-bottom: 2px solid #f0f0f0; display: inline-block; padding-bottom: 8px; }
         .poem-text { white-space: pre-wrap; font-size: 1.5rem; color: #34495e; font-weight: 500; margin-bottom: 30px; text-align: center; }
-        
         .back-btn { background: var(--primary); color: white; border: none; padding: 12px 25px; border-radius: 30px; cursor: pointer; font-family: 'Amiri'; font-size: 1.1rem; transition: 0.3s; }
         .back-btn:hover { background: var(--gold); }
-        
-        /* أزرار التواصل */
         footer { background: var(--primary); color: white; text-align: center; padding: 50px 20px; margin-top: 60px; }
         .social-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 15px; }
         .social-links a { color: white; text-decoration: none; padding: 12px 25px; border-radius: 30px; font-weight: bold; min-width: 150px; transition: 0.3s; text-align: center; }
@@ -80,13 +66,12 @@
         <li><button onclick="showPoem('p17')">سقط القناع</button></li>
         <li><button onclick="showPoem('p18')">مدار الشمس</button></li>
         <li><button onclick="showPoem('p19')">خلف حدود النبض</button></li>
+        <li><button onclick="showPoem('p20')" style="background: var(--gold); color: white;">سكون الختام</button></li>
     </ul>
 </div>
 
 <div class="container" id="poem-viewer">
-    <div id="p1" class="poem-content">
-        <div class="poem-title">شراع الأمل</div>
-        <div class="poem-text">في غياهب الليل الحالكِ، حيث تسكن الظنون،
+    <div id="p1" class="poem-content"><div class="poem-title">شراع الأمل</div><div class="poem-text">في غياهب الليل الحالكِ، حيث تسكن الظنون،
 يسطع نجم بعيد، يُنير ما كان في العيون.
 لا تترك الريح العاصفة تُطفئ شمعة الفؤاد،
 ففي عمق الألم ينبتُ الأمل، وينمو المراد.
@@ -101,13 +86,9 @@
 مَن يزرعُ الخيرَ يجنيه، ومَن يسعى يصل،
 فاجعل من قلبكَ مرآةً، وفيها الصدق يتصل.
 تلك هي الحياة ألحانٌ، تُعزفُ على وتَرِ اليقين،
-فكن صوتَ الجمال، واهمس بالسلام للعالمين.</div>
-        <button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button>
-    </div>
+فكن صوتَ الجمال، واهمس بالسلام للعالمين.</div><button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button></div>
 
-    <div id="p2" class="poem-content">
-        <div class="poem-title">ظل الغياب</div>
-        <div class="poem-text">على رصيفِ اللّيلِ، وحدي، لا أحدْ
+    <div id="p2" class="poem-content"><div class="poem-title">ظل الغياب</div><div class="poem-text">على رصيفِ اللّيلِ، وحدي، لا أحدْ
 والصمتُ يُلقي فوقَ روحيَ ما وَجدْ
 من ذكرياتٍ، باتَ يُحييها الأسى
 كأنّها الأمسُ الذي عنّي ابتعَدْ.
@@ -122,13 +103,9 @@
 يا ظلَّ غيابٍ، كَمْ أثقلتَ كاهلي
 تركتَني لليلٍ طَويلٍ، جاهلي
 بأنّ الحياةَ ستمضي رغمَ كُلّ الألمْ
-وأنّ قلبيَ في هذا المدى سيبقى يتأملْ.</div>
-        <button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button>
-    </div>
+وأنّ قلبيَ في هذا المدى سيبقى يتأملْ.</div><button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button></div>
 
-    <div id="p3" class="poem-content">
-        <div class="poem-title">بقايا سكون</div>
-        <div class="poem-text">وَحْدِي، وصَوتُ اللَّيلِ ينسابُ هَدَرْ
+    <div id="p3" class="poem-content"><div class="poem-title">بقايا سكون</div><div class="poem-text">وَحْدِي، وصَوتُ اللَّيلِ ينسابُ هَدَرْ
 والروحُ تَحملُ ما تَناءى واستَتَرْ
 في كُلِّ زاويةٍ، هَشيمُ حِكايَةٍ
 والقلبُ يَرتَشِفُ الأسى، قَطْرًا فَقَطْرْ.
@@ -143,13 +120,9 @@
 يا غَيمَةَ الحُزنِ التي سَكَنَت دَمِي
 هل مِن نَجَاةٍ لِلمُتيّمِ مِن ظَمِي؟
 مَا زالَ في كَفِّ الدُّجى وَعدٌ خَفِيٌّ
-أنَّ الصَّباحَ سَيمحُو كُلَّ ما أَلَمِي.</div>
-        <button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button>
-    </div>
+أنَّ الصَّباحَ سَيمحُو كُلَّ ما أَلَمِي.</div><button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button></div>
 
-    <div id="p16" class="poem-content">
-        <div class="poem-title">زئير الصبر</div>
-        <div class="poem-text">نَصْلٌ مِنَ الجَمْرِ فِي الأَضْلَاعِ يَعْتَمِلُ
+    <div id="p16" class="poem-content"><div class="poem-title">زئير الصبر</div><div class="poem-text">نَصْلٌ مِنَ الجَمْرِ فِي الأَضْلَاعِ يَعْتَمِلُ
 وَمِنْ نِيَاطِ الحَشَا لِلظَّهْرِ يَنْتَقِلُ
 ضَاقَ النَّفَسْ، وَالضُّلُوعُ اليَوْمَ حَانِيَةٌ
 كَأَنَّ ثِقْلَ جِبَالِ الأَرْضِ يَكتملُ
@@ -160,13 +133,9 @@
 أعضُّ جرحي بصبرٍ ليسَ يعرفهُ
 إلا الذي بضياءِ الصبرِ ينبثقُ
 يا ربي هبني من الألطافِ معجزةً
-تغسلْ عذابي.. فإني بغيرك لا أثقُ</div>
-        <button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button>
-    </div>
+تغسلْ عذابي.. فإني بغيرك لا أثقُ</div><button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button></div>
 
-    <div id="p4" class="poem-content">
-        <div class="poem-title">طعنة في الظهر</div>
-        <div class="poem-text">يا مَن صَنعتُ لَهُ بقلبيَ مَنزِلاً
+    <div id="p4" class="poem-content"><div class="poem-title">طعنة في الظهر</div><div class="poem-text">يا مَن صَنعتُ لَهُ بقلبيَ مَنزِلاً
 وظَنَنتُ أنَّ وِصالَهُ لَن يَرحَلا
 جِئتَ اليومَ، والسيفُ في كَفِّ الَّذي
 ما كانَ يَوماً في ظُنوني خاذِلاً.
@@ -181,13 +150,9 @@
 فَلتَذهَبِ الأَوهامُ، لَستَ سِوى سَرابْ
 فَلقَد كَشَفتَ الوَجهَ عِندَ مُنَادَمَةِ العَذابْ
 تَرَكتُ لَكَ الذِّكرى، لِتَشهَدَ أنَّني
-قَلباً وَفِيّاً كُنتُ لَكَ، وأَنتَ تَخونُ دونَ حِسابْ.</div>
-        <button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button>
-    </div>
+قَلباً وَفِيّاً كُنتُ لَكَ، وأَنتَ تَخونُ دونَ حِسابْ.</div><button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button></div>
 
-    <div id="p5" class="poem-content">
-        <div class="poem-title">صرخة الألم</div>
-        <div class="poem-text">أنا الذي في الصدرِ مسكنُ حسرتي،
+    <div id="p5" class="poem-content"><div class="poem-title">صرخة الألم</div><div class="poem-text">أنا الذي في الصدرِ مسكنُ حسرتي،
 أنا الذي قد أضنى الحياةَ بنكبَتي.
 فيّ ضلوعي صرخةٌ، ما خَفَّ صَوتُها،
 من نوبةٍ حادّةٍ تشُدُّ قبضتي.
@@ -199,13 +164,9 @@
 أبيتُ سَاهِرَ العيونِ وفي الحَشا.
 بركانُ آهاتٍ يزيدُ وحشتي.
 يا ربِّ خفِّفْ ما أُعاني مِن أذىً،
-أنتَ المُعينُ وأنتَ من إليهِ المُشتَكَى.</div>
-        <button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button>
-    </div>
+أنتَ المُعينُ وأنتَ من إليهِ المُشتَكَى.</div><button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button></div>
 
-    <div id="p6" class="poem-content">
-        <div class="poem-title">من أنا</div>
-        <div class="poem-text">أنا الذي في صميمِ الليلِ قد سَهِدا،
+    <div id="p6" class="poem-content"><div class="poem-title">من أنا</div><div class="poem-text">أنا الذي في صميمِ الليلِ قد سَهِدا،
 وعانقَ الصمتَ حتى الصمتُ قد شَهِدا.
 أنا السؤالُ الذي حارَ الوجودُ بهِ،
 والإجابةُ التي لم تعرفِ الرَّصدا.
@@ -220,13 +181,9 @@
 أنا الذي قد عَبَرْتُ الموجَ مبتسما،
 وكنتُ للريحِ، رغمَ الهَوْلِ، مُرْتَشِدا.
 أنا الخلودُ الذي يبقى برغمِ الفَنا،
-وليسَ لي في كتابِ الكونِ أن أُعدّا.</div>
-        <button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button>
-    </div>
+وليسَ لي في كتابِ الكونِ أن أُعدّا.</div><button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button></div>
 
-    <div id="p7" class="poem-content">
-        <div class="poem-title">العزيمة التي لا تهزم</div>
-        <div class="poem-text">أنا ولو عصف الأسى بضلوعي
+    <div id="p7" class="poem-content"><div class="poem-title">العزيمة التي لا تهزم</div><div class="poem-text">أنا ولو عصف الأسى بضلوعي
 قسماً بربي لن ترين دموعي
 سأصنعُ الصمتَ في وجهِ النوائبِ
 ولن يروا أبداً طعمَ خضوعي
@@ -240,13 +197,9 @@
 لا تَنالُ مني سِهامٌ من تَمَنُّعي
 يا مَن رَجَوتِ سُقُوطي قَدْ حَانَ وَقتُ رُجُوعي
 فَلتَشهَدِ الدُّنيا بأنِّي غَيْرُ مُنْهَزِمٍ
-وَالحِصْنُ آخِرُهُ مَبْنِيٌّ عَلَى ضُلُوعِي</div>
-        <button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button>
-    </div>
+وَالحِصْنُ آخِرُهُ مَبْنِيٌّ عَلَى ضُلُوعِي</div><button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button></div>
 
-    <div id="p8" class="poem-content">
-        <div class="poem-title">غربة الروح</div>
-        <div class="poem-text">في ذاتِ أرضٍ أنا، لكِنّني غريبْ،
+    <div id="p8" class="poem-content"><div class="poem-title">غربة الروح</div><div class="poem-text">في ذاتِ أرضٍ أنا، لكِنّني غريبْ،
 والقلبُ يَنزفُ، أين الوَصلُ يا حبيْب؟
 المَدى قصيرٌ، والعَينُ ترى، ولكنْ
 ما بيننا بُعدُ السّماواتِ الصّعيب.
@@ -267,13 +220,9 @@
 لكنّي صابرٌ، والوَعدُ في أمَلٍ،
 أنّ اللّقاءَ سيأتي.. ويَنقَضي التَّغريبْ.
 ويَجمَعُ اللهُ شَملَ الروحِ بـ أحبَابٍ،
-ويُصبِحُ القُربُ مِفتاحاً.. لِكُلِّ غَريبْ.</div>
-        <button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button>
-    </div>
+ويُصبِحُ القُربُ مِفتاحاً.. لِكُلِّ غَريبْ.</div><button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button></div>
 
-    <div id="p9" class="poem-content">
-        <div class="poem-title">زحمة العمر</div>
-        <div class="poem-text">الحزنُ أن نلتقي والدهرُ مزدحمُ،
+    <div id="p9" class="poem-content"><div class="poem-title">زحمة العمر</div><div class="poem-text">الحزنُ أن نلتقي والدهرُ مزدحمُ،
 في زحمةِ العُمرِ لا يُبقي ولا يَذمُ.
 لقاءُ غيمٍ على أرضٍ بها عطشٌ،
 يا ليتَ قلبي بهذا الوَجدِ لم يَهَمُ.
@@ -302,13 +251,9 @@
 أبقى وحيدًا ورغمَ الحُبِّ ما وُجِدَتْ،
 للحزنِ آخرةٌ أو للفؤادِ فَمُ.
 في زحمةِ العمرِ قد لاقيتُ قاتلتي،
-والقبرُ، يا للأسى, في القلبِ مُلْتَزَمُ.</div>
-        <button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button>
-    </div>
+والقبرُ، يا للأسى, في القلبِ مُلْتَزَمُ.</div><button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button></div>
 
-    <div id="p10" class="poem-content">
-        <div class="poem-title">رحلة الحافلة</div>
-        <div class="poem-text">البداية صمتٌ، والزجاجُ مرآةٌ،
+    <div id="p10" class="poem-content"><div class="poem-title">رحلة الحافلة</div><div class="poem-text">البداية صمتٌ، والزجاجُ مرآةٌ،
 وجوهُ الناسِ فيها حكايةٌ وذاكرة.
 كُلٌّ لهُ وجهةٌ، وقصّةٌ تُخفى،
 بينَ المقاعدِ، لا همسٌ ولا ثرثرة.
@@ -327,13 +272,9 @@
 تلكَ الحافلةُ سفينةٌ تحملُ الأقدارَ،
 فيها نَنسى القادِمَ والماضي السَحيقَ.
 وإذا تركتُها، يبقى الأملُ في روحي،
-أن ألقى غريباً آخَرَ في ذاتِ الطريقِ.</div>
-        <button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button>
-    </div>
+أن ألقى غريباً آخَرَ في ذاتِ الطريقِ.</div><button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button></div>
 
-    <div id="p11" class="poem-content">
-        <div class="poem-title">أضناني البعد</div>
-        <div class="poem-text">أَضْناني البُعْدُ حتَّى ذَابَ بي صَبْرِي
+    <div id="p11" class="poem-content"><div class="poem-title">أضناني البعد</div><div class="poem-text">أَضْناني البُعْدُ حتَّى ذَابَ بي صَبْرِي
 وَمَزَّقَ السَّهَرُ المُضْنِي حِمَى فِكْرِي
 أَبِيتُ واللَّيْلُ مَدَّ الظِّلَّ يَقْتُلُنِي
 وَمَنُّ قَلْبِي بَيْنَ الضِّيقِ والذَّعْرِ
@@ -352,13 +293,9 @@
 يَا رَبُّ هَبْ لِي مِنَ الآلامِ عَافِيَةً
 فَقَدْ بَلَغْتُ مِنَ الأَوْجَاعِ مَا أَزْرِي
 واكْتُبْ لِقَاءً يُزِيحُ الهَمَّ عَنْ نَفَسِي
-وَيَجْبُرُ القَلْبَ بَعْدَ البُعْدِ والقَهْرِ</div>
-        <button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button>
-    </div>
+وَيَجْبُرُ القَلْبَ بَعْدَ البُعْدِ والقَهْرِ</div><button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button></div>
 
-    <div id="p12" class="poem-content">
-        <div class="poem-title">قطار العمر</div>
-        <div class="poem-text">عَلى مَرفأِ الأيامِ سَارَ القِطَارُ
+    <div id="p12" class="poem-content"><div class="poem-title">قطار العمر</div><div class="poem-text">عَلى مَرفأِ الأيامِ سَارَ القِطَارُ
 تَحثُّ خُطَاهُ لَوعةٌ وانتِظارُ
 مَضى يَنهبُ الدَّربَ الطَّويلَ كَأنهُ
 عَلَى صَفحةِ الأيامِ رعدٌ ونَارُ
@@ -369,17 +306,13 @@
 نُسابقُ ظِلَّ الوَقتِ والريحُ خَلفنا
 وليسَ لَنا عَن ذي الرحيلِ فِرارُ
 فيا قَلبُ صبراً إنْ تَعالى بِنَا الأَسى
-فَبَعدَ الدُّجى لا بدَّ أنْ يَسطعَ نهارُ
+فَبَعدَ الدُّجى لا بدَّ أنْ يَسطعَ nهارُ
 نُدوِّنُ في صمتِ المَقاعدِ قِصةً
 لها بَينَ طَيّاتِ السِّنينِ غُبارُ
 قِطَارُ خُطانا لا يَمِلُّ مَسيرَهُ
-إلى أنْ يُحيِّينا الأخيرُ.. جِوارُ</div>
-        <button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button>
-    </div>
+إلى أنْ يُحيِّينا الأخيرُ.. جِوارُ</div><button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button></div>
 
-    <div id="p13" class="poem-content">
-        <div class="poem-title">طيف الكرى</div>
-        <div class="poem-text">يا ليلُ طُلتَ، وأينَ الفجرُ ينبلجُ؟
+    <div id="p13" class="poem-content"><div class="poem-title">طيف الكرى</div><div class="poem-text">يا ليلُ طُلتَ، وأينَ الفجرُ ينبلجُ؟
 والقلبُ في ضيقِ همِّ الأرقِ يختلجُ
 ناديتُ نومي، فعافَ الجفنَ مسكنُهُ
 كأنَّ طيفَ الكرى بالصدِّ يمتزجُ
@@ -397,13 +330,9 @@
 كأنَّ في كلِّ ركنٍ من زواياها
 وجعاً يعودُ وفي التفكيرِ يندرجُ
 يا ربِّ أنزلْ على الأجفانِ راحتها
-فليسَ غيركَ من نرجو به الفرجُ</div>
-        <button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button>
-    </div>
+فليسَ غيركَ من نرجو به الفرجُ</div><button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button></div>
 
-    <div id="p14" class="poem-content">
-        <div class="poem-title">لهيب الحنين</div>
-        <div class="poem-text">يا راجفَ القلبِ كم تشقيكَ أشواقُ
+    <div id="p14" class="poem-content"><div class="poem-title">لهيب الحنين</div><div class="poem-text">يا راجفَ القلبِ كم تشقيكَ أشواقُ
 وكم يذوبُ من التذكارِ أحداقُ
 نحنُ الذينَ نبيتُ والحنينُ بنا
 نارٌ تشبُّ وفي الأضلاعِ إحراقُ
@@ -430,13 +359,9 @@
 يا ربِّ أطفئْ لهيباً زادَ لوعتنا
 إنَّ الحنينَ لكلِّ الصبرِ محراقُ
 واجبرْ فؤاداً من الأوجاعِ منكسرًا
-فأنتَ وحدكَ للأرواحِ عتَّاقُ</div>
-        <button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button>
-    </div>
+فأنتَ وحدكَ للأرواحِ عتَّاقُ</div><button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button></div>
 
-    <div id="p15" class="poem-content">
-        <div class="poem-title">دموع الصمت</div>
-        <div class="poem-text">أُداري دَمعَتي والليلُ يَسترُني
+    <div id="p15" class="poem-content"><div class="poem-title">دموع الصمت</div><div class="poem-text">أُداري دَمعَتي والليلُ يَسترُني
 وأكتمُ صرختي والقلبُ يَنفطرُ
 وما ذنبي إذا الأيامُ قد قَسَتْ
 وصارَ الصدقُ في وَطني هو الخَطرُ؟
@@ -451,13 +376,9 @@
 سأبقى كالجبالِ رُغمَ جِراحي
 وإنْ جارَ الزمانُ، فصبري هو الظفرُ
 دموعي عزيزةٌ لا يراها سوى الخالقِ
-ففي مِحكمِ الآياتِ.. بَشّرَ مَن صَبَروا</div>
-        <button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button>
-    </div>
+ففي مِحكمِ الآياتِ.. بَشّرَ مَن صَبَروا</div><button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button></div>
 
-    <div id="p17" class="poem-content">
-        <div class="poem-title">سقط القناع</div>
-        <div class="poem-text">تباً لِمن جَعلَ النفاقَ لهُ رداءْ
+    <div id="p17" class="poem-content"><div class="poem-title">سقط القناع</div><div class="poem-text">تباً لِمن جَعلَ النفاقَ لهُ رداءْ
 يا مَن غَدوتَ لِكلِّ كِذبةٍ وعاءْ
 تَبني قصوراً من زيفٍ ومن هواءْ
 والصدقُ في عينيكَ أبعدُ من سماءْ
@@ -478,13 +399,9 @@
 قالوا لِكُلِّ منَ الأسماءِ نَصيبُها
 إلّاكَ أنتَ.. فمالكَ والمَكرُماتِ لِقاءْ
 فالاسمُ يزهو بالكِرامِ وجُودِهم
-وفِعالُكَ الخَرقاءُ مَحضُ شَقاءْ</div>
-        <button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button>
-    </div>
+وفِعالُكَ الخَرقاءُ مَحضُ شَقاءْ</div><button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button></div>
 
-    <div id="p18" class="poem-content">
-        <div class="poem-title">مدار الشمس</div>
-        <div class="poem-text">هَيْهَاتَ يُدرِكُ ما بِي كُلُّ مَن عَبَرَا
+    <div id="p18" class="poem-content"><div class="poem-title">مدار الشمس</div><div class="poem-text">هَيْهَاتَ يُدرِكُ ما بِي كُلُّ مَن عَبَرَا
 أو يَستَبينُ بِمَوجي الصَّمتُ والكَدَرَا
 أنا الذي صاغَ مِن أوجاعِهِ لُغَةً
 تُحَيّرُ العَقْلَ.. وتَستَنطِقُ الحَجَرَا
@@ -499,13 +416,9 @@
 تَجْرِي الجِرَاحُ وَلا أُبْدِي لَهَا جَزَعاً
 فَالبَحْرُ يَبْقَى عَظِيماً.. كُلَّمَا كَبُرَا
 إِنْ عِشْتُ عِشْتُ بَتَاجِ العِزِّ مُلْتَحِفاً
-أَوْ مُتُّ.. مَاتَ مَعِي مَن كَانَ مُنْتَصِرَا!</div>
-        <button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button>
-    </div>
+أَوْ مُتُّ.. مَاتَ مَعِي مَن كَانَ مُنْتَصِرَا!</div><button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button></div>
 
-    <div id="p19" class="poem-content">
-        <div class="poem-title">خلف حدود النبض</div>
-        <div class="poem-text">صبرتُ حتّى استجارَ الصبرُ من جَلَدي
+    <div id="p19" class="poem-content"><div class="poem-title">خلف حدود النبض</div><div class="poem-text">صبرتُ حتّى استجارَ الصبرُ من جَلَدي
 وسِرتُ والمِلحُ في جُرحي يُماشيني
 
 يا حارساً للسياجِ العتْـمِ مَعذرةً
@@ -524,9 +437,28 @@
 أقصى المَنافي وما في الكأسِ يسقيني
 
 حسبي من العمرِ أني صنتُ وُدّهُمُ
-وخيبتُهمْ في جحيمِ الصمتِ ترويني</div>
-        <button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button>
-    </div>
+وخيبتُهمْ في جحيمِ الصمتِ ترويني</div><button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button></div>
+
+    <div id="p20" class="poem-content"><div class="poem-title">سكون الختام</div><div class="poem-text">بِآخِرِ سَطْرٍ قَدْ نَفَضْتُ غُبَارِي
+وَأَوْدَعْتُ فِي هَذِي الحُرُوفِ سَرَارِي
+
+تَرَكْتُ بِغُرْبَةِ الرُّوحِ الَّتِي قَدْ كَتَبْتُهَا
+نَزِيفَ فُؤَادٍ وَانْكِسَارَ مَسَارِي
+
+عَبَرْتُ بِكُمْ كُلَّ المَطَافِ وَهَذِهِ
+بَقَايَا دُمُوعِي وَانْتِصَارُ قَرَارِي
+
+فَمَنْ ذَاقَ شِعْرِي ذَاقَ بَعْضَ مَوَاجِعِي
+وَمَنْ شَمَّ حِبْرِي زَارَ عُمْقَ دِيَارِي
+
+سَلَامٌ عَلَى الأَوْرَاقِ حِينَ تَعُدُّكُمْ
+وَعَفْواً إِذَا ضَاقَتْ بِكُمْ أَشْعَارِي
+
+فَمَا كَانَ هَذَا الشِّعْرُ إِلَّا أَمَانَةً
+حَمَلْتُ بِهَا رُوحِي وَطُولَ صِبَارِي
+
+خَتَمْتُ جراحي بالصمودِ وإنَّني
+برغمِ عذابي شامخٌ ومُنيرُ</div><button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button></div>
 </div>
 
 <footer>
@@ -554,6 +486,5 @@
         window.scrollTo(0, 0);
     }
 </script>
-
 </body>
 </html>
