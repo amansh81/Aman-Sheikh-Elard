@@ -33,10 +33,40 @@
     </style>
 </head>
 <body>
-
-<header>
+    <header>
     <img src="me.jpg" class="profile-img" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'">
     <h1>أمان سمير شيخ الأرض</h1>
+<div id="author-section" style="text-align: center; margin: 20px auto; font-family: 'Amiri', serif;">
+
+    <button onclick="toggleBio()" id="bio-btn" style="background-color: transparent; color: #ffffff; padding: 12px 25px; border: 2px solid #c5a059; border-radius: 8px; font-size: 1.2rem; cursor: pointer; min-width: 180px; transition: 0.3s;">
+        نبذة عن الشاعر
+    </button>
+
+    <div id="bio-content" style="display: none; max-width: 800px; margin: 20px auto; padding: 25px; background: rgba(25, 25, 25, 0.98); border: 1px solid #c5a059; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        <h2 style="color: #c5a059; font-family: 'Aref Ruqaa', serif; font-size: 1.8rem; margin-bottom: 15px;">أمان سمير شيخ الأرض</h2>
+        <p style="color: #ffffff; font-size: 1.3rem; line-height: 1.9; direction: rtl; text-align: justify; padding: 0 10px;">
+            شاعرٌ من دمشق (مواليد 1981)، يحمل في نبضه إرث الكلمة وشجن الاغتراب في ألمانيا. 
+            رغم أن الحرب نالت من أعماله القديمة، إلا أن ديوان <strong>"غربة الروح"</strong> وديوان <strong>"صمت الصدى"</strong> جاءا كبزوغٍ جديد. 
+            أكتبُ لأحاكي الوجدان، ولأجعل من ألم الحنين وزفرات الروح قصائد تسكنُ بين ضلوع الورق.
+        </p>
+        <button onclick="toggleBio()" style="margin-top: 15px; background: #c5a059; border: none; color: black; padding: 8px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">إغلاق</button>
+    </div>
+
+    <script>
+    function toggleBio() {
+        var bio = document.getElementById('bio-content');
+        var btn = document.getElementById('bio-btn');
+        if (bio.style.display === "none") {
+            bio.style.display = "block";
+            btn.style.display = "none"; // إخفاء الزر عند فتح النبذة
+        } else {
+            bio.style.display = "none";
+            btn.style.display = "inline-block"; // إظهار الزر عند الإغلاق
+        }
+    }
+    </script>
+</div>
+
     <div class="diwan-switcher">
         <button id="btn1" class="btn-diwan active" onclick="switchDiwan('diwan1')">ديوان غربة الروح</button>
         <button id="btn2" class="btn-diwan" onclick="switchDiwan('diwan2')">ديوان صمت الصدى</button>
