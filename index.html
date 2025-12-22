@@ -56,12 +56,14 @@
 <div id="bio-content" style="display: none; max-width: 800px; margin: 20px auto; padding: 25px; background: rgba(25, 25, 25, 0.98); border: 1px solid #c5a059; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
     <h2 style="color: #c5a059; font-family: 'Aref Ruqaa', serif; font-size: 1.8rem; margin-bottom: 15px;">أمان سمير شيخ الأرض</h2>
     <p style="color: #ffffff; font-size: 1.25rem; line-height: 1.9; direction: rtl; text-align: justify; padding: 0 10px; font-family: 'Amiri', serif;">
-        شاعرٌ وأديبٌ سوريٌّ من مواليد دمشق (1981)، سليل عائلة "شيخ الأرض" الدمشقية العريقة. <strong>نهل أمان من معين والده الأديب والشاعر الراحل سمير شيخ الأرض</strong> (صاحب ديوان الوائلي)، ومن فكر وأدب أعمامه الراحلين؛ الشاعر <strong>موفق شيخ الأرض</strong>، والفيلسوف والأديب <strong>تيسير شيخ الأرض</strong>.
+        شاعرٌ وأديبٌ سوريٌّ من مواليد دمشق (1981)، سليل عائلة "شيخ الأرض" الدمشقية العريقة. 
+        <strong>نهل أمان من معين والده الأديب والشاعر الراحل سمير شيخ الأرض</strong>، ومن فكر وأدب أعمامه الراحلين؛ الشاعر <strong>موفق شيخ الأرض</strong>، والفيلسوف والأديب <strong>تيسير شيخ الأرض</strong>.
         <br><br>
-        ورغم أن الحرب قد نالت من نتاجه الأدبي الأولي وأعماله القديمة التي فُقدت في أتونها، إلا أنه صمد ليحمل إرث الكلمة الدمشقية، ويصيغ من <strong>شجن الاغتراب</strong> دواوينه <strong>"غربة الروح"</strong> و <strong>"صمت الصدى"</strong>، ليكون صوتاً وفياً لتاريخ عائلته الثقافي، ومجدداً لرسالة الحرف التي توارثها كابراً عن كابر.
+        ورغم أن الحرب قد نالت من نتاجه الأدبي الأولي وأعماله القديمة التي فُقدت في أتونها، إلا أنه صمد ليحمل إرث الكلمة الدمشقية، ويصيغ من <strong>شجن الاغتراب</strong> قصائده، ليكون صوتاً وفياً لتاريخ عائلته الثقافي، ومجدداً لرسالة الحرف التي توارثها كابراً عن كابر.
     </p>
     <button onclick="toggleBio()" style="margin-top: 15px; background: #c5a059; border: none; color: black; padding: 8px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">إغلاق</button>
 </div>
+
 
 
     <script>
@@ -77,12 +79,15 @@
         }
     }
     </script>
+<div class="diwan-switcher">
+    <button id="btn1" class="btn-diwan active" onclick="switchDiwan('diwan1')">ديوان غربة الروح</button>
+    <button id="btn2" class="btn-diwan" onclick="switchDiwan('diwan2')">ديوان صمت الصدى</button>
+    
+    <button id="btn3" class="btn-diwan" style="opacity: 0.6; cursor: not-allowed;" onclick="alert('هذا الديوان سيصدر قريباً بإذن الله')">
+        نبض القلوب (قريباً)
+    </button>
 </div>
 
-    <div class="diwan-switcher">
-        <button id="btn1" class="btn-diwan active" onclick="switchDiwan('diwan1')">ديوان غربة الروح</button>
-        <button id="btn2" class="btn-diwan" onclick="switchDiwan('diwan2')">ديوان صمت الصدى</button>
-    </div>
 </header>
 
 <div class="index-section active" id="diwan1-index">
