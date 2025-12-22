@@ -116,17 +116,17 @@
 
 <div class="index-section" id="diwan2-index">
     <div style="font-family: 'Aref Ruqaa'; font-size: 1.8rem; color: var(--gold); margin-bottom: 15px;">فهرس صمت الصدى</div>   
-    <ul class="index-list">       
-        <li><button onclick="showPoem('d2p1')">صمت الصدى</button></li>
-        <li><button onclick="showPoem('d2p2')">رمادُ المملكة</button></li>
-        <li><button onclick="showPoem('d2p3')">وقار الصمت</button></li>
-        <li><button onclick="showPoem('d2p4')">نبض القوافي</button></li>
+    <ul class="index-list" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; max-width: 100%; padding: 0;">       
+        <li style="list-style: none;"><button onclick="showPoem('d2p1')" style="min-width: 120px;">صمت الصدى</button></li>
+        <li style="list-style: none;"><button onclick="showPoem('d2p2')" style="min-width: 120px;">رمادُ المملكة</button></li>
+        <li style="list-style: none;"><button onclick="showPoem('d2p3')" style="min-width: 120px;">وقار الصمت</button></li>
+        <li style="list-style: none;"><button onclick="showPoem('d2p4')" style="min-width: 120px;">نبض القوافي</button></li>
+        <li style="list-style: none;"><button onclick="showPoem('d2p5')" style="min-width: 120px;">تأملاتُ الليل</button></li>
     </ul>
 </div>
 
-        
-    </ul>
-</div>
+
+
 <div class="container" id="poem-viewer">
     <div id="p1" class="poem-content"><div class="poem-title">شراع الأمل</div><div class="poem-text">في غياهب الليل الحالكِ، حيث تسكن الظنون،
 يسطع نجم بعيد، يُنير ما كان في العيون.
@@ -656,7 +656,38 @@
 ففي القوافي فضاءٌ ليسَ يَهجُرُني</div>
         <button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button>
     </div>
-    
+  <div id="d2p5" class="poem-content">
+    <div class="poem-title">تأملاتُ الليل</div>
+    <div class="poem-text">
+فِي سُكُونِ اللَّيْلِ أَجْلِسُ وَحْدِي
+أَرْقُبُ النَّجْمَ فِي أَقَاصِي المَدَايَا
+
+عِزَّةُ النَّفْسِ أَنَارَتْ كُلَّ نَبْضِي
+وَاسْتَفَاضَتْ بِبَوْحِهَا فِي الحَنَايَا
+
+يَا زَمَانًا مَضَى، وَيَا طَيْفَ ذِكْرَى
+أَنْتَ بَاقٍ.. خُلُوداً فِي حَشَايَا
+
+أَبْنِي مِنَ الصَّمْتِ صَرْحًا وَدَارَا
+أُسَائِلُ نَفْسِي عَنْ سِرِّ الوُجُودِ
+
+فَأَلْقَى اليَقِينَ يُضِيءُ النَّهَارَا
+فَمَا عُدْتُ أَخْشَى ظَلَامَ اللَّيَالِي
+
+وَقَلْبِي اسْتَعَادَ المَدَى وَالقَرَارَا
+أَرَى فِي النُّجُومِ حكَايَا الصُّمُودِ
+
+تَخُطُّ عَلَى الكَوْنِ عِزًّا وَمَنَارَا
+وَإِنْ حاصَرَتْنِي رِيَاحُ الزَّمانِ
+
+جَعَلْتُ مِنَ الصَّبْرِ دِرْعًا وَجَارَا
+
+فَأَنَا الَّذِي مَهْمَا اسْتَبَدَّ بِيَ الدُّجَى
+حُرَّاً أَظَلُّ.. وَعِزَّتِي مِقْدَارَا
+    </div>
+    <button class="back-btn" onclick="goBack()">عودة للفهرس ↑</button>
+</div>
+  
 <footer>
     <div style="font-family: 'Aref Ruqaa'; font-size: 1.6rem; color: var(--gold); margin-bottom: 15px;">تواصل معي مباشرة</div>
     <div class="social-links">
