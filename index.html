@@ -91,7 +91,8 @@
                 <button class="btn-index" onclick="loadDiwan('spirit')">ديوان غربة الروح</button>
                 <button class="btn-index" onclick="loadDiwan('echo')">ديوان صمت الصدى</button>
                 <button class="btn-index" onclick="loadDiwan('emotions')">ديوان نبض القلوب</button>
-                <button class="btn-index" style="opacity: 0.7;" onclick="alert('ديوان عمق المشاعر.. قريباً بإذن الله')">ديوان عمق المشاعر (قريباً)</button>
+   <button class="btn-index" onclick="loadDiwan('depth')">ديوان عمق المشاعر</button>
+
             </div>
         </div>
 
@@ -136,6 +137,7 @@
 <script src="spirit.js"></script>
 <script src="echo.js"></script>
 <script src="emotions.js"></script>
+<script src="depth.js"></script>
 
 <script>
     var currentDiwan = [];
@@ -149,25 +151,30 @@
         window.scrollTo(0, 0);
     }
 
-    function loadDiwan(type) {
-        if (type === 'spirit') { 
-            currentDiwan = (typeof spiritPoems !== 'undefined') ? spiritPoems : [];
-            document.getElementById('diwan-name').innerText = "غربة الروح";
-        } else if (type === 'echo') { 
-            currentDiwan = (typeof echoPoems !== 'undefined') ? echoPoems : [];
-            document.getElementById('diwan-name').innerText = "صمت الصدى"; 
-        } else if (type === 'emotions') { 
-            currentDiwan = (typeof emotionsPoems !== 'undefined') ? emotionsPoems : [];
-            document.getElementById('diwan-name').innerText = "نبض القلوب";
-        }
-        
-        var list = document.getElementById('list-area');
-        list.innerHTML = "";
-        for (var j = 0; j < currentDiwan.length; j++) {
-            list.innerHTML += '<button class="btn-index" onclick="showPoem(' + j + ')">' + currentDiwan[j].title + '</button>';
-        }
-        showPage('diwan-index-page');
+  function loadDiwan(type) {
+    if (type === 'spirit') {
+        currentDiwan = (typeof spiritPoems !== 'undefined') ? spiritPoems : [];
+        document.getElementById('diwan-name').innerText = "غربة الروح";
+    } else if (type === 'echo') {
+        currentDiwan = (typeof echoPoems !== 'undefined') ? echoPoems : [];
+        document.getElementById('diwan-name').innerText = "صمت الصدى";
+    } else if (type === 'emotions') {
+        currentDiwan = (typeof emotionsPoems !== 'undefined') ? emotionsPoems : [];
+        document.getElementById('diwan-name').innerText = "نبض القلوب";
+    } else if (type === 'depth') {
+        currentDiwan = (typeof depthPoems !== 'undefined') ? depthPoems : [];
+        document.getElementById('diwan-name').innerText = "عمق المشاعر";
     }
+
+    var list = document.getElementById('list-area');
+    list.innerHTML = "";
+    for (var j = 0; j < currentDiwan.length; j++) {
+        list.innerHTML += '<button class="btn-index" onclick="showPoem(' + j + ')">' + 
+        currentDiwan[j].title + '</button>';
+    }
+    showPage('diwan-index-page');
+}
+
 
     function showPoem(idx) {
         var p = currentDiwan[idx];
