@@ -2,43 +2,76 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>ديوان الشاعر أمان سمير شيخ الأرض</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <style>
-        :root { 
+        :root {
             --gold: #d4af37; --gold-dark: #b8860b;
-            --black: #0a0a0a; --creamy: #fdf5e6; 
-            --paper: #ffffff; --whatsapp: #25D366; 
-            --facebook: #1877F2; --text-dark: #333;
+            --black: #0a0a0a; --creamy: #fdf5e6;
+            --text-dark: #333;
         }
-        body { background-color: var(--black); margin: 0; padding: 0; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; font-family: 'Amiri', serif; direction: rtl; }
-        .app-container { width: 100%; max-width: 500px; display: flex; flex-direction: column; align-items: center; text-align: center; min-height: 100vh; }
-        .profile-section { padding: 30px 20px; width: 100%; box-sizing: border-box; }
-        .profile-img { width: 135px; height: 135px; border-radius: 50%; border: 3px solid var(--gold); object-fit: cover; margin: 0 auto 15px auto; display: block; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); }
-        h1 { font-size: 2.1rem; margin: 10px 0; color: white; width: 100%; }
-        .btn-gold-outline { background: transparent; color: var(--gold); border: 1.5px solid var(--gold); padding: 8px 25px; border-radius: 50px; cursor: pointer; font-family: 'Amiri', serif; font-size: 1.1rem; transition: 0.3s; }
+        * { box-sizing: border-box; }
+        body { 
+            background-color: var(--black); 
+            margin: 0; padding: 0; 
+            font-family: 'Amiri', serif; 
+            direction: rtl; 
+            overflow-x: hidden;
+            width: 100%;
+            -webkit-user-select: none; user-select: none; 
+        }
+        .app-container { 
+            width: 100%; max-width: 500px; 
+            margin: 0 auto; display: flex; 
+            flex-direction: column; align-items: center; 
+            text-align: center; min-height: 100vh;
+        }
+        .profile-section { padding: 30px 20px; width: 100%; display: flex; flex-direction: column; align-items: center; }
+        .profile-img { width: 135px; height: 135px; border-radius: 50%; border: 3px solid var(--gold); object-fit: cover; margin-bottom: 15px; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); }
+        h1 { font-size: 2.1rem; color: white; margin: 10px 0; width: 100%; }
+        .btn-gold-outline { background: transparent; color: var(--gold); border: 1.5px solid var(--gold); padding: 8px 25px; border-radius: 50px; cursor: pointer; font-size: 1.1rem; margin-bottom: 15px; font-family: 'Amiri', serif; }
         
-        .content-area { background: var(--creamy); width: 92%; margin-top: 20px; border-radius: 40px; padding: 40px 0; display: flex; flex-direction: column; align-items: center; min-height: 400px; border: 2px solid var(--gold); box-sizing: border-box; margin-bottom: 20px; }
-        .page { display: none; width: 100%; flex-direction: column; align-items: center; }
-        .page.active { display: flex; animation: fadeIn 0.4s ease; }
+        .content-area { 
+            background: var(--creamy); width: 100%; 
+            border-radius: 30px 30px 0 0; padding: 30px 20px; 
+            flex-grow: 1; min-height: 450px;
+        }
+        .page { display: none; width: 100%; }
+        .page.active { display: block; animation: fadeIn 0.5s; }
+
+        /* تعديل الصفحة الرئيسية وأزرار الدواوين */
+        .main-menu-container { padding: 10px 0; }
+        .btn-index { 
+            width: 100%; background: white; color: var(--text-dark); 
+            border: 2px double var(--gold); /* إطار ذهبي للأزرار */
+            padding: 15px; margin-bottom: 15px; border-radius: 15px; 
+            font-size: 1.3rem; cursor: pointer; font-family: 'Amiri', serif; 
+            display: block; transition: 0.3s;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        .btn-index:active { transform: scale(0.98); background: #fffcf5; }
         
-        .btn-index { width: 85%; background: var(--paper); color: var(--gold); border: 1px solid rgba(212, 175, 55, 0.4); padding: 16px; border-radius: 12px; font-family: 'Amiri', serif; font-size: 1.4rem; cursor: pointer; margin-bottom: 12px; font-weight: bold; transition: 0.3s; }
-        .nav-controls { display: flex; justify-content: center; gap: 10px; width: 90%; margin-top: 20px; flex-wrap: wrap; }
-        .btn-nav { background: var(--gold); color: var(--black); border: none; padding: 12px 18px; border-radius: 10px; font-weight: bold; font-family: 'Amiri', serif; font-size: 1.2rem; cursor: pointer; flex: 1; min-width: 80px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-        .btn-nav-index { background: var(--black); color: var(--gold); border: 1px solid var(--gold); }
+        /* الإطار الذهبي المزدوج حول بطاقة القصيدة والنبذة */
+        .poem-card { 
+            background: white; padding: 25px; 
+            border-radius: 20px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+            margin-bottom: 20px; width: 100%;
+            border: 4px double var(--gold); 
+        }
         
-        .poem-title { color: var(--gold-dark); font-size: 1.8rem; margin-bottom: 20px; font-weight: bold; }
-        .poem-card { background: var(--paper); width: 85%; padding: 30px 20px; border-radius: 15px; border: 1px solid rgba(212, 175, 55, 0.2); margin-bottom: 20px; box-sizing: border-box; }
-        .poem-text { font-size: 1.45rem; line-height: 2.4; white-space: pre-line; color: var(--text-dark); text-align: center; }
+        .poem-title { color: var(--gold-dark); font-size: 1.8rem; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .poem-text { line-height: 2.4; white-space: pre-line; color: var(--text-dark); font-size: 1.25rem; text-align: center; }
         
-        .bottom-fixed-section { width: 100%; padding: 20px 0; margin-top: auto; display: flex; flex-direction: column; align-items: center; gap: 10px; }
-        .contact-label { color: var(--gold); font-size: 1.3rem; font-weight: bold; margin-bottom: 5px; }
-        .social-buttons { display: flex; justify-content: center; gap: 15px; }
-        .social-btn { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 1rem; font-weight: bold; box-shadow: 0 3px 10px rgba(0,0,0,0.3); }
-        .wa { background-color: var(--whatsapp); } .fb { background-color: var(--facebook); } .em { background-color: var(--gold); color: var(--black); }
-        .footer-rights { font-size: 0.85rem; color: rgba(255,255,255,0.5); padding-top: 10px; padding-bottom: 20px; }
-        
+        .nav-controls { display: flex; justify-content: center; gap: 10px; margin-top: 20px; width: 100%; }
+        .btn-nav { flex: 1; background: #eee; border: none; padding: 12px; border-radius: 10px; cursor: pointer; font-family: 'Amiri', serif; font-size: 1.1rem; }
+        .btn-nav-index { background: var(--gold-dark); color: white; }
+
+        .bottom-section { width: 100%; padding: 20px 0; background: var(--black); color: var(--gold); display: flex; flex-direction: column; align-items: center; }
+        .social-buttons { display: flex; justify-content: center; gap: 15px; margin: 15px 0; }
+        .social-btn { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 0.9rem; font-weight: bold; }
+        .wa { background: #25D366; } .fb { background: #1877F2; } .em { background: var(--gold); color: black; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
@@ -53,52 +86,50 @@
 
     <div class="content-area">
         <div id="main-index" class="page active">
-            <div style="color:var(--gold); font-size: 2rem; margin-bottom: 20px;">✒️</div>
-            <button class="btn-index" onclick="loadDiwan('spirit')">ديوان غربة الروح</button>
-            <button class="btn-index" onclick="loadDiwan('echo')">ديوان صمت الصدى</button>
-            <button class="btn-index" onclick="loadDiwan('emotions')">ديوان نبض القلوب</button>
-     <button class="btn-index" onclick="loadDiwan('depth')">ديوان عمق المشاعر</button>
-      
-
+            <div style="font-size: 2rem; margin-bottom: 15px;">✒️</div>
+            <div class="main-menu-container">
+                <button class="btn-index" onclick="loadDiwan('spirit')">ديوان غربة الروح</button>
+                <button class="btn-index" onclick="loadDiwan('echo')">ديوان صمت الصدى</button>
+                <button class="btn-index" onclick="loadDiwan('emotions')">ديوان نبض القلوب</button>
+                <button class="btn-index" style="opacity: 0.7;" onclick="alert('ديوان عمق المشاعر.. قريباً بإذن الله')">ديوان عمق المشاعر (قريباً)</button>
+            </div>
         </div>
 
         <div id="bio" class="page">
             <div class="poem-card">
                 <h2 class="poem-title">نبذة عن الشاعر</h2>
-                <div class="poem-text" style="text-align: justify; padding: 0 10px;">
-                     شاعرٌ وأديبٌ سوريٌّ من مواليد دمشق (1981)، من عائلة "شيخ الأرض" الدمشقية العريقة التي رفدت الثقافة العربية بأعلامٍ في الأدب والفكر. نهل أمان من معين والده الأديب والشاعر سمير شيخ الأرض، ومن فكر وأدب أعمامه الكبار؛ الشاعر الراحل موفق شيخ الأرض، والفيلسوف والأديب تيسير شيخ الأرض.
-
-​ورغم أن الحرب قد نالت من نتاجه الأدبي الأولي وأعماله القديمة التي فُقدت في أتونها، إلا أنه صمد ليحمل إرث الكلمة الدمشقية من جديد في مغتربه ، ويصيغ من شجن الروح ليكون صوتاً وفياً لتاريخ عائلته الثقافي، ومجدداً لرسالة الحرف التي توارثها جيلاً بعد جيل.
-
+                <div class="poem-text" style="text-align: justify;">
+                     شاعرٌ وأديبٌ سوريٌّ من مواليد دمشق (1981)، من عائلة "شيخ الأرض" الدمشقية العريقة التي رفدت الثقافة العربية بأعلامٍ في الأدب والفكر. نهل أمان من معين والده الأديب والشاعر الراحل سمير شيخ الأرض، ومن فكر وأدب أعمامه الكبار؛ الشاعر الراحل موفق شيخ الأرض، والفيلسوف والأديب الراحل تيسير شيخ الأرض.
+ورغم أن الحرب قد نالت من نتاجه الأدبي الأولي وأعماله القديمة التي فُقدت في أتونها، إلا أنه صمد ليحمل إرث الكلمة الدمشقية من جديد في مغتربه ، ويصيغ من شجن الروح ليكون صوتاً وفياً لتاريخ عائلته الثقافي، ومجدداً لرسالة الحرف التي توارثها جيلاً بعد جيل.
 
                 </div>
             </div>
-            <button class="btn-nav" style="max-width: 150px;" onclick="showPage('main-index')">رجوع</button>
+            <button class="btn-nav btn-nav-index" onclick="showPage('main-index')">رجوع للرئيسية</button>
         </div>
 
         <div id="diwan-index-page" class="page">
             <h2 id="diwan-name" class="poem-title"></h2>
-            <div id="poems-list-buttons" style="width:100%"></div>
-            <button class="btn-nav btn-nav-index" style="max-width: 150px; margin-top:20px;" onclick="showPage('main-index')">الرئيسية</button>
+            <div id="list-area"></div>
+            <button class="btn-nav btn-nav-index" style="margin-top:20px;" onclick="showPage('main-index')">الرئيسية</button>
         </div>
 
         <div id="poem-view-page" class="page">
             <div class="poem-card">
-                <h2 id="current-poem-title" class="poem-title"></h2>
-                <div id="current-poem-text" class="poem-text"></div>
+                <h2 id="p-title" class="poem-title"></h2>
+                <div id="p-text" class="poem-text"></div>
             </div>
             <div id="nav-btns" class="nav-controls"></div>
         </div>
     </div>
 
-    <div class="bottom-fixed-section">
-        <div class="contact-label">تواصل معي</div>
+    <div class="bottom-section">
+        <div style="font-size: 1.2rem; font-weight: bold;">تواصل معي</div>
         <div class="social-buttons">
-            <a href="https://wa.me/19143706101" class="social-btn wa" target="_blank">واتس</a>
-            <a href="https://www.facebook.com/share/1CzgC4RsRS/" class="social-btn fb" target="_blank">فيس</a>
+            <a href="https://wa.me/19143706101" class="social-btn wa">واتس</a>
+            <a href="https://www.facebook.com/share/1CzgC4RsRS/" class="social-btn fb">فيس</a>
             <a href="mailto:aman.sheikh.elard@gmail.com" class="social-btn em">إيميل</a>
         </div>
-        <div class="footer-rights">جميع الحقوق محفوظة © أمان سمير شيخ الأرض</div>
+        <div style="font-size: 0.85rem; opacity: 0.7;">جميع الحقوق محفوظة © أمان سمير شيخ الأرض</div>
     </div>
 </div>
 
@@ -106,66 +137,52 @@
 <script src="echo.js"></script>
 <script src="emotions.js"></script>
 
-
 <script>
-    let currentDiwan = [];
+    var currentDiwan = [];
 
     function showPage(id) {
-        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-        document.getElementById(id).classList.add('active');
+        var pages = document.getElementsByClassName('page');
+        for (var i = 0; i < pages.length; i++) {
+            pages[i].style.display = 'none';
+        }
+        document.getElementById(id).style.display = 'block';
         window.scrollTo(0, 0);
     }
 
     function loadDiwan(type) {
-    if (type === 'spirit') { 
-        currentDiwan = typeof spiritPoems !== 'undefined' ? spiritPoems : [];
-        document.getElementById('diwan-name').innerText = "غربة الروح"; 
-    } else if (type === 'echo') { 
-        currentDiwan = typeof echoPoems !== 'undefined' ? echoPoems : [];
-        document.getElementById('diwan-name').innerText = "صدى الصمت"; 
-    } else if (type === 'emotions') { 
-        currentDiwan = typeof emotionsPoems !== 'undefined' ? emotionsPoems : [];
-        document.getElementById('diwan-name').innerText = "نبض القلوب"; 
-    }
-    else if (type === 'depth') { 
-        currentDiwan = typeof depthPoems !== 'undefined' ? depthPoems : [];
-        document.getElementById('diwan-name').innerText = "عمق المشاعر"; 
-    }
-    
-    const listArea = document.getElementById('poems-list-buttons');
-    listArea.innerHTML = "";
-    currentDiwan.forEach((poem, index) => {
-        listArea.innerHTML += `<button class="btn-index" onclick="showPoem(${index})">${poem.title}</button>`;
-    });
-    showPage('diwan-index-page');
-}
-
-
-   function showPoem(index) {
-    const poem = currentDiwan[index];
-    document.getElementById('current-poem-title').innerText = poem.title;
-    document.getElementById('current-poem-text').innerText = poem.text;
-
-    const nav = document.getElementById('nav-btns');
-    
-    // تعريف الأزرار
-    let prevBtn = index > 0 ? `<button class="btn-nav" onclick="showPoem(${index - 1})">السابق</button>` : '';
-    let middleBtn = `<button class="btn-nav btn-nav-index" onclick="showPage('diwan-index-page')">الفهرس</button>`;
-    let actionBtn = '';
-
-    if (index < currentDiwan.length - 1) {
-        // إذا كان هناك قصائد تالية يظهر زر "التالي"
-        actionBtn = `<button class="btn-nav" onclick="showPoem(${index + 1})">التالي</button>`;
-    } else {
-        // إذا كانت هذه آخر قصيدة، يظهر زر "العودة للرئيسية" بلون ذهبي
-        actionBtn = `<button class="btn-nav" style="background-color: var(--gold); color: #000; font-weight: bold;" onclick="showPage('main-index')"> الرئيسية</button>`;
+        if (type === 'spirit') { 
+            currentDiwan = (typeof spiritPoems !== 'undefined') ? spiritPoems : [];
+            document.getElementById('diwan-name').innerText = "غربة الروح";
+        } else if (type === 'echo') { 
+            currentDiwan = (typeof echoPoems !== 'undefined') ? echoPoems : [];
+            document.getElementById('diwan-name').innerText = "صمت الصدى"; 
+        } else if (type === 'emotions') { 
+            currentDiwan = (typeof emotionsPoems !== 'undefined') ? emotionsPoems : [];
+            document.getElementById('diwan-name').innerText = "نبض القلوب";
+        }
+        
+        var list = document.getElementById('list-area');
+        list.innerHTML = "";
+        for (var j = 0; j < currentDiwan.length; j++) {
+            list.innerHTML += '<button class="btn-index" onclick="showPoem(' + j + ')">' + currentDiwan[j].title + '</button>';
+        }
+        showPage('diwan-index-page');
     }
 
-    nav.innerHTML = `${prevBtn} ${middleBtn} ${actionBtn}`;
+    function showPoem(idx) {
+        var p = currentDiwan[idx];
+        document.getElementById('p-title').innerText = p.title;
+        document.getElementById('p-text').innerText = p.text;
+        var nav = document.getElementById('nav-btns');
+        var prev = idx > 0 ? '<button class="btn-nav" onclick="showPoem(' + (idx - 1) + ')">السابق</button>' : '';
+        var mid = '<button class="btn-nav btn-nav-index" onclick="showPage(\'diwan-index-page\')">الفهرس</button>';
+        var next = (idx < currentDiwan.length - 1) ? '<button class="btn-nav" onclick="showPoem(' + (idx + 1) + ')">التالي</button>' : '<button class="btn-nav" style="background:var(--gold);color:black" onclick="showPage(\'main-index\')">الرئيسية</button>';
+        nav.innerHTML = prev + mid + next;
+        showPage('poem-view-page');
+    }
 
-    showPage('poem-view-page');
-}
-
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); alert("حقوق النشر محفوظة للشاعر أمان سمير شيخ الأرض"); });
 </script>
+
 </body>
 </html>
