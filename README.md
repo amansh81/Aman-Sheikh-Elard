@@ -1,5 +1,5 @@
 # Aman-Sheikh-Elard
-The official website and digital collection of the poet Aman Samir Sheikh Elard الرسمي والديوان الرقمي للشاعر أمان سمير شيخ الأرض
+The official website and digital collection of the poet Aman Samir Sheikh Elard - الموقع الرسمي والديوان الرقمي للشاعر أمان سمير شيخ الأرض
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head><title>ديوان الشاعر أمان سمير شيخ الأرض</title>
