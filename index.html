@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ديوان الشاعر أمان سمير شيخ الأرض</title>
+    <title>دِيوَانُ الشَّاعِرِ أَمَان سَمِير شَيْخ الأَرْض</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -40,11 +40,10 @@
         .page { display: none; width: 100%; }
         .page.active { display: block; animation: fadeIn 0.5s; }
 
-        /* تعديل الصفحة الرئيسية وأزرار الدواوين */
         .main-menu-container { padding: 10px 0; }
         .btn-index { 
             width: 100%; background: white; color: var(--text-dark); 
-            border: 2px double var(--gold); /* إطار ذهبي للأزرار */
+            border: 2px double var(--gold); 
             padding: 15px; margin-bottom: 15px; border-radius: 15px; 
             font-size: 1.3rem; cursor: pointer; font-family: 'Amiri', serif; 
             display: block; transition: 0.3s;
@@ -52,7 +51,6 @@
         }
         .btn-index:active { transform: scale(0.98); background: #fffcf5; }
         
-        /* الإطار الذهبي المزدوج حول بطاقة القصيدة والنبذة */
         .poem-card { 
             background: white; padding: 25px; 
             border-radius: 20px; 
@@ -79,39 +77,37 @@
 
 <div class="app-container">
     <div class="profile-section">
-        <img src="me.jpg" alt="أمان سمير شيخ الأرض" class="profile-img">
-        <h1>أمان سمير شيخ الأرض</h1>
-        <button class="btn-gold-outline" onclick="showPage('bio')">نبذة عن الشاعر</button>
+        <img src="me.jpg" alt="أَمَان سَمِير شَيْخ الأَرْض" class="profile-img">
+        <h1>أَمَان سَمِير شَيْخ الأَرْض</h1>
+        <button class="btn-gold-outline" onclick="showPage('bio')">نُبْذَةٌ عَنِ الشَّاعِرِ</button>
     </div>
 
     <div class="content-area">
         <div id="main-index" class="page active">
             <div style="font-size: 2rem; margin-bottom: 15px;">✒️</div>
             <div class="main-menu-container">
-                <button class="btn-index" onclick="loadDiwan('spirit')">ديوان غربة الروح</button>
-                <button class="btn-index" onclick="loadDiwan('echo')">ديوان صمت الصدى</button>
-                <button class="btn-index" onclick="loadDiwan('emotions')">ديوان نبض القلوب</button>
-   <button class="btn-index" onclick="loadDiwan('depth')">ديوان عمق المشاعر</button>
-
+                <button class="btn-index" onclick="loadDiwan('spirit')">غُرْبَةُ الرُّوح</button>
+                <button class="btn-index" onclick="loadDiwan('echo')">صَمْتُ الصَّدَى</button>
+                <button class="btn-index" onclick="loadDiwan('emotions')">نَبْضُ القُلُوب</button>
+                <button class="btn-index" onclick="loadDiwan('depth')">عُمْقُ المَشَاعِر</button>
+                <button class="btn-index" onclick="loadDiwan('beyond')">خَلْفَ حُدُودِ البَوْح</button>
             </div>
         </div>
 
         <div id="bio" class="page">
             <div class="poem-card">
-                <h2 class="poem-title">نبذة عن الشاعر</h2>
-                <div class="poem-text" style="text-align: justify;">
-                     ​"شاعرٌ وأديبٌ سوريٌّ من مواليد دمشق (1981)، ينتمي إلى عائلة "شيخ الأرض" الدمشقية العريقة التي رفدت الثقافة العربية بأعلامٍ في الأدب والفكر. نهل أمان من معين والده الأديب والشاعر الراحل سمير شيخ الأرض، واستقى من فكر وأدب أعمامه الكبار؛ الشاعر الراحل موفق شيخ الأرض، والفيلسوف والأديب الراحل تيسير شيخ الأرض.
-​ورغم أن الحرب قد نالت من نتاجه الأدبي الأولي وأعماله القديمة التي فُقدت في أتونها، إلا أنه صمد ليحمل إرث الكلمة الدمشقية من جديد في مغتربه، ويصيغ من شجن الروح قصائده، ليكون صوتاً وفياً لتاريخ عائلته الثقافي، ومجدداً لرسالة الحرف التي توارثها جيلاً بعد جيل."
-
+                <h2 class="poem-title">نُبْذَةٌ عَنِ الشَّاعِرِ</h2>
+                <div class="poem-text" style="text-align: justify; text-indent: 20px;">
+                    "شَاعِرٌ وَأَدِيبٌ سُورِيٌّ مِنْ مَوَالِيدِ دِمَشْق (1981)، يَنْتَمِي إِلَى عَائِلَةِ «شَيْخ الأَرْض» الدِّمَشْقِيَّةِ العَرِيقَةِ الَّتِي رَفَدَتِ الثَّقَافَةَ العَرَبِيَّةَ بِأَعْلَامٍ فِي الأَدَبِ وَالفِكْرِ. نَهَلَ أَمَان مِنْ مَعِينِ وَالِدِهِ الأَدِيبِ وَالشَّاعِرِ الرَّاحِلِ سَمِير شَيْخ الأَرْض، وَاسْتَقَى مِنْ فِكْرِ وَأَدَبِ أَعْمَامِهِ الكِبَارِ؛ الشَّاعِرِ الرَّاحِلِ مُوَفَّق شَيْخ الأَرْض، وَالفَيْلَسُوفِ وَالأَدِيبِ الرَّاحِلِ تَيْسِير شَيْخ الأَرْض. وَرَغْمَ أَنَّ الحَرْبَ قَدْ نَالَتْ مِنْ نِتَاجِهِ الأَدَبِيِّ الأَوَّلِيِّ وَأَعْمَالِهِ القَدِيمَةِ الَّتِي فُقِدَتْ فِي أَتُونِهَا، إِلَّا أَنَّهُ صَمَدَ لِيَحْمِلَ إِرْثَ الكَلِمَةِ الدِّمَشْقِيَّةِ مِنْ جَدِيدٍ فِي مُغْتَرَبِهِ، وَيَصِيغَ مِنْ شَجَنِ الرُّوحِ قَصَائِدَهُ، لِيَكُونَ صَوْتاً وَفِيّاً لِتَارِيخِ عَائِلَتِهِ الثَّقَافِيِّ، وَمُجَدِّداً لِرِسَالَةِ الحَرْفِ الَّتِي تَوَارَثَهَا جِيلاً بَعْدَ جِيلٍ."
                 </div>
             </div>
-            <button class="btn-nav btn-nav-index" onclick="showPage('main-index')">رجوع للرئيسية</button>
+            <button class="btn-nav btn-nav-index" onclick="showPage('main-index')">رُجُوعٌ لِلرَّئِيسِيَّةِ</button>
         </div>
 
         <div id="diwan-index-page" class="page">
             <h2 id="diwan-name" class="poem-title"></h2>
             <div id="list-area"></div>
-            <button class="btn-nav btn-nav-index" style="margin-top:20px;" onclick="showPage('main-index')">الرئيسية</button>
+            <button class="btn-nav btn-nav-index" style="margin-top:20px;" onclick="showPage('main-index')">الرَّئِيسِيَّة</button>
         </div>
 
         <div id="poem-view-page" class="page">
@@ -124,13 +120,13 @@
     </div>
 
     <div class="bottom-section">
-        <div style="font-size: 1.2rem; font-weight: bold;">تواصل معي</div>
+        <div style="font-size: 1.2rem; font-weight: bold;">تَوَاصَلْ مَعِي</div>
         <div class="social-buttons">
-            <a href="https://wa.me/19143706101" class="social-btn wa">واتس</a>
-            <a href="https://www.facebook.com/share/1CzgC4RsRS/" class="social-btn fb">فيس</a>
-            <a href="mailto:aman.sheikh.elard@gmail.com" class="social-btn em">إيميل</a>
+            <a href="https://wa.me/19143706101" class="social-btn wa">وَاتْس</a>
+            <a href="https://www.facebook.com/share/1CzgC4RsRS/" class="social-btn fb">فِيس</a>
+            <a href="mailto:aman.sheikh.elard@gmail.com" class="social-btn em">إِيمِيل</a>
         </div>
-        <div style="font-size: 0.85rem; opacity: 0.7;">جميع الحقوق محفوظة © أمان سمير شيخ الأرض</div>
+        <div style="font-size: 0.85rem; opacity: 0.7;">جَمِيعُ الحُقُوقِ مَحْفُوظَةٌ © أَمَان سَمِير شَيْخ الأَرْض</div>
     </div>
 </div>
 
@@ -138,6 +134,7 @@
 <script src="echo.js"></script>
 <script src="emotions.js"></script>
 <script src="depth.js"></script>
+<script src="beyond.js"></script>
 
 <script>
     var currentDiwan = [];
@@ -151,44 +148,50 @@
         window.scrollTo(0, 0);
     }
 
-  function loadDiwan(type) {
-    if (type === 'spirit') {
-        currentDiwan = (typeof spiritPoems !== 'undefined') ? spiritPoems : [];
-        document.getElementById('diwan-name').innerText = "غربة الروح";
-    } else if (type === 'echo') {
-        currentDiwan = (typeof echoPoems !== 'undefined') ? echoPoems : [];
-        document.getElementById('diwan-name').innerText = "صمت الصدى";
-    } else if (type === 'emotions') {
-        currentDiwan = (typeof emotionsPoems !== 'undefined') ? emotionsPoems : [];
-        document.getElementById('diwan-name').innerText = "نبض القلوب";
-    } else if (type === 'depth') {
-        currentDiwan = (typeof depthPoems !== 'undefined') ? depthPoems : [];
-        document.getElementById('diwan-name').innerText = "عمق المشاعر";
-    }
+    function loadDiwan(type) {
+        if (type === 'spirit') {
+            currentDiwan = (typeof spiritPoems !== 'undefined') ? spiritPoems : [];
+            document.getElementById('diwan-name').innerText = "غُرْبَةُ الرُّوح";
+        } else if (type === 'echo') {
+            currentDiwan = (typeof echoPoems !== 'undefined') ? echoPoems : [];
+            document.getElementById('diwan-name').innerText = "صَمْتُ الصَّدَى";
+        } else if (type === 'emotions') {
+            currentDiwan = (typeof emotionsPoems !== 'undefined') ? emotionsPoems : [];
+            document.getElementById('diwan-name').innerText = "نَبْضُ القُلُوب";
+        } else if (type === 'depth') {
+            currentDiwan = (typeof depthPoems !== 'undefined') ? depthPoems : [];
+            document.getElementById('diwan-name').innerText = "عُمْقُ المَشَاعِر";
+        } else if (type === 'beyond') {
+            currentDiwan = (typeof beyondPoems !== 'undefined') ? beyondPoems : [];
+            document.getElementById('diwan-name').innerText = "خَلْفَ حُدُودِ البَوْح";
+        }
 
-    var list = document.getElementById('list-area');
-    list.innerHTML = "";
-    for (var j = 0; j < currentDiwan.length; j++) {
-        list.innerHTML += '<button class="btn-index" onclick="showPoem(' + j + ')">' + 
-        currentDiwan[j].title + '</button>';
+        var list = document.getElementById('list-area');
+        list.innerHTML = "";
+        for (var j = 0; j < currentDiwan.length; j++) {
+            list.innerHTML += '<button class="btn-index" onclick="showPoem(' + j + ')">' + 
+            currentDiwan[j].title + '</button>';
+        }
+        showPage('diwan-index-page');
     }
-    showPage('diwan-index-page');
-}
-
 
     function showPoem(idx) {
         var p = currentDiwan[idx];
         document.getElementById('p-title').innerText = p.title;
         document.getElementById('p-text').innerText = p.text;
         var nav = document.getElementById('nav-btns');
-        var prev = idx > 0 ? '<button class="btn-nav" onclick="showPoem(' + (idx - 1) + ')">السابق</button>' : '';
-        var mid = '<button class="btn-nav btn-nav-index" onclick="showPage(\'diwan-index-page\')">الفهرس</button>';
-        var next = (idx < currentDiwan.length - 1) ? '<button class="btn-nav" onclick="showPoem(' + (idx + 1) + ')">التالي</button>' : '<button class="btn-nav" style="background:var(--gold);color:black" onclick="showPage(\'main-index\')">الرئيسية</button>';
+        var prev = idx > 0 ? '<button class="btn-nav" onclick="showPoem(' + (idx - 1) + ')">السَّابِق</button>' : '';
+        var mid = '<button class="btn-nav btn-nav-index" onclick="showPage(\'diwan-index-page\')">الفِهْرِس</button>';
+        var next = (idx < currentDiwan.length - 1) ? '<button class="btn-nav" onclick="showPoem(' + (idx + 1) + ')">التَّالِي</button>' : '<button class="btn-nav" style="background:var(--gold);color:black" onclick="showPage(\'main-index\')">الرَّئِيسِيَّة</button>';
         nav.innerHTML = prev + mid + next;
         showPage('poem-view-page');
     }
 
-    document.addEventListener('contextmenu', function(e) { e.preventDefault(); alert("حقوق النشر محفوظة للشاعر أمان سمير شيخ الأرض"); });
+    // منع القائمة المنبثقة وحماية المحتوى
+    document.addEventListener('contextmenu', function(e) { 
+        e.preventDefault(); 
+        alert("حُقُوقُ النَّشْرِ مَحْفُوظَةٌ لِلشَّاعِرِ أَمَان سَمِير شَيْخ الأَرْض"); 
+    });
 </script>
 
 </body>
