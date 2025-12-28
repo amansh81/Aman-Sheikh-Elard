@@ -93,6 +93,7 @@
                 <button class="btn-index" onclick="loadDiwan('depth')">عُمْقُ المَشَاعِر</button>
                 <button class="btn-index" onclick="loadDiwan('beyond')">خَلْفَ حُدُودِ البَوْح</button>
                 <button class="btn-index" onclick="loadDiwan('anfwan')">عُـنْـفُـوَانُ الـقَـوَافِـي</button>
+                <button class="btn-index" onclick="loadDiwan('baqaya')">بَـقَـايَـا إِنْـسَـان</button>
             </div>
         </div>
 
@@ -138,6 +139,7 @@
 <script src="depth.js"></script>
 <script src="beyond.js"></script>
 <script src="anfwan.js"></script>
+<script src="baqayaInsan.js"></script>
 
 <script>
     var currentDiwan = [];
@@ -171,10 +173,13 @@
             currentDiwan = (typeof beyondPoems !== 'undefined') ? beyondPoems : [];
             document.getElementById('diwan-name').innerText = "خَلْفَ حُدُودِ البَوْح";
         } 
-        // تم تعديل الشرط هنا ليتوافق مع المصفوفة الجديدة
         else if (type === 'anfwan') {
             currentDiwan = (typeof anfwanAlQawafi !== 'undefined') ? anfwanAlQawafi : [];
             document.getElementById('diwan-name').innerText = "عُـنْـفُـوَانُ الـقَـوَافِـي";
+        }
+        else if (type === 'baqaya') {
+            currentDiwan = (typeof baqayaInsan !== 'undefined') ? baqayaInsan : [];
+            document.getElementById('diwan-name').innerText = "بَـقَـايَـا إِنْـسَـان";
         }
 
         var list = document.getElementById('list-area');
