@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>دِيوَانُ الشَّاعِرِ أَمَان سَمِير شَيْخ الأَرْض</title>
+    <title>دِيوَانُ الشَّاعِرِ أمان سمير شيخ الأرض</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -70,12 +70,12 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
-<body>
+<body oncopy="return false" oncut="return false" onpaste="return false">
 
 <div class="app-container">
     <div class="profile-section">
-        <img src="me.jpg" alt="أَمَان سَمِير شَيْخ الأَرْض" class="profile-img">
-        <h1>أَمَان سَمِير شَيْخ الأَرْض</h1>
+        <img src="me.jpg" alt="أمان سمير شيخ الأرض" class="profile-img">
+        <h1>أمان سمير شيخ الأرض</h1>
         <button class="btn-gold-outline" onclick="showPage('bio')">نُبْذَةٌ عَنِ الشَّاعِرِ</button>
     </div>
 
@@ -122,7 +122,7 @@
             <a href="https://www.facebook.com/share/1CzgC4RsRS/" class="social-btn fb">FB</a>
             <a href="mailto:aman.sheikh.elard@gmail.com" class="social-btn em">Email</a>
         </div>
-        <div style="font-size: 0.85rem; opacity: 0.7;">© أَمَان سَمِير شَيْخ الأَرْض</div>
+        <div style="font-size: 0.9rem; font-weight: bold; color: var(--gold);">© جَمِيعُ حُقُوقِ النَّشْرِ وَالطَّبْعِ مَحْفُوظَةٌ لِلشَّاعِرِ أمان سمير شيخ الأرض</div>
     </div>
 </div>
 
@@ -136,6 +136,19 @@
 <script src="baqayaInsan.js"></script>
 
 <script>
+    // --- كود منع النسخ وإظهار رسائل التحذير ---
+    document.addEventListener('contextmenu', function(e) {
+        alert("عذراً.. جَمِيعُ حُقُوقِ النَّشْرِ وَالطَّبْعِ مَحْفُوظَةٌ لِلشَّاعِرِ أمان سمير شيخ الأرض. لا يُسْمَحُ بِالنَّسْخِ.");
+        e.preventDefault();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 'v' || e.key === 'a' || e.key === 's')) {
+            alert("تَنْبِيه: حُقُوقُ المِلْكِيَّةِ الفِكْرِيَّةِ مَحْفُوظَةٌ. النَّسْخُ غَيْرُ مَسْمُوحٍ بِهِ.");
+            e.preventDefault();
+        }
+    });
+
     function showPage(id) {
         const pages = document.querySelectorAll('.page');
         pages.forEach(p => p.style.display = 'none');
@@ -181,7 +194,6 @@
         nav.innerHTML = prev + mid + next;
         showPage('poem-view-page');
     }
-    document.addEventListener('contextmenu', e => e.preventDefault());
 </script>
 </body>
 </html>
