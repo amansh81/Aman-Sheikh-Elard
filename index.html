@@ -27,6 +27,27 @@
             flex-direction: column; align-items: center; 
             text-align: center; min-height: 100vh;
         }
+        
+        /* --- فكرة العلامة المائية خلف النص --- */
+        .poem-text-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .watermark {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            opacity: 0.05; /* درجة الشفافية - باهتة جداً */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            z-index: 0;
+            font-size: 1rem;
+            transform: rotate(-30deg);
+        }
+        /* ---------------------------------- */
+
         .profile-section { padding: 30px 20px; width: 100%; display: flex; flex-direction: column; align-items: center; }
         .profile-img { width: 135px; height: 135px; border-radius: 50%; border: 3px solid var(--gold); object-fit: cover; margin-bottom: 15px; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); }
         h1 { font-size: 2.1rem; color: white; margin: 10px 0; width: 100%; font-family: 'Amiri', serif; }
@@ -54,10 +75,11 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
             margin-bottom: 20px; width: 100%;
             border: 4px double var(--gold); 
+            position: relative;
         }
         
-        .poem-title { color: var(--gold-dark); font-size: 1.8rem; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; font-family: 'Amiri', serif; }
-        .poem-text { line-height: 2.4; white-space: pre-line; color: var(--text-dark); font-size: 1.25rem; text-align: justify; font-family: 'Amiri', serif; }
+        .poem-title { color: var(--gold-dark); font-size: 1.8rem; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; font-family: 'Amiri', serif; z-index: 1; position: relative; }
+        .poem-text { line-height: 2.4; white-space: pre-line; color: var(--text-dark); font-size: 1.25rem; text-align: justify; font-family: 'Amiri', serif; z-index: 1; position: relative; }
         
         .nav-controls { display: flex; justify-content: center; gap: 10px; margin-top: 20px; width: 100%; }
         .btn-nav { flex: 1; background: #eee; border: none; padding: 12px; border-radius: 10px; cursor: pointer; font-family: 'Amiri', serif; font-size: 1.1rem; }
@@ -109,6 +131,11 @@
 
         <div id="poem-view-page" class="page">
             <div class="poem-card">
+                <div class="watermark">
+                    أمان سمير شيخ الأرض أمان سمير شيخ الأرض أمان سمير شيخ الأرض
+                    أمان سمير شيخ الأرض أمان سمير شيخ الأرض أمان سمير شيخ الأرض
+                    أمان سمير شيخ الأرض أمان سمير شيخ الأرض أمان سمير شيخ الأرض
+                </div>
                 <h2 id="p-title" class="poem-title"></h2>
                 <div id="p-text" class="poem-text" style="text-align: center;"></div>
             </div>
@@ -117,8 +144,9 @@
     </div>
 
     <div class="bottom-section">
-        <div class="social-buttons">
-            <a href="https://wa.me/19143706101" class="social-btn wa">WA</a>
+        <div style="text-align: center; margin-bottom: 5px;">للتواصل معنا عبر</div>
+        <div class="social-buttons" style="margin-top: 5px;">
+            <a href="https: //wa.me/19143706101" class="social-btn wa">WA</a>
             <a href="https://www.facebook.com/share/1CzgC4RsRS/" class="social-btn fb">FB</a>
             <a href="mailto:aman.sheikh.elard@gmail.com" class="social-btn em">Email</a>
         </div>
@@ -136,15 +164,20 @@
 <script src="baqayaInsan.js"></script>
 
 <script>
-    // --- كود منع النسخ وإظهار رسائل التحذير ---
-    document.addEventListener('contextmenu', function(e) {
-        alert("عذراً.. جَمِيعُ حُقُوقِ النَّشْرِ وَالطَّبْعِ مَحْفُوظَةٌ لِلشَّاعِرِ أمان سمير شيخ الأرض. لا يُسْمَحُ بِالنَّسْخِ.");
+    // --- منع النسخ وتصوير الشاشة ---
+    document.addEventListener('contextmenu', e => {
+        alert("عذراً.. جَمِيعُ حُقُوقِ النَّشْرِ مَحْفُوظَةٌ لِلشَّاعِرِ أمان سمير شيخ الأرض.");
         e.preventDefault();
     });
 
-    document.addEventListener('keydown', function(e) {
-        if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 'v' || e.key === 'a' || e.key === 's')) {
-            alert("تَنْبِيه: حُقُوقُ المِلْكِيَّةِ الفِكْرِيَّةِ مَحْفُوظَةٌ. النَّسْخُ غَيْرُ مَسْمُوحٍ بِهِ.");
+    document.addEventListener('keydown', e => {
+        // منع اختصارات النسخ وتصوير الشاشة (PrtScn)
+        if (e.key === "PrintScreen" || e.keyCode === 44) {
+            alert("تنبيه: محاولة تصوير الشاشة تنتهك حقوق الملكية.");
+            e.preventDefault();
+        }
+        if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 'p')) {
+            alert("هذا المحتوى محمي بحقوق النشر.");
             e.preventDefault();
         }
     });
