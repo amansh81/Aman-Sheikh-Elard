@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>دِيوَانُ الشَّاعِرِ أمان سمير شيخ الأرض</title>
+    <title>دِيوَانُ الشَّاعِرِ أَمَان سَمِير شَيْخ الأَرْض</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -28,16 +28,11 @@
             text-align: center; min-height: 100vh;
         }
         
-        /* --- فكرة العلامة المائية خلف النص --- */
-        .poem-text-container {
-            position: relative;
-            overflow: hidden;
-        }
         .watermark {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             pointer-events: none;
-            opacity: 0.05; /* درجة الشفافية - باهتة جداً */
+            opacity: 0.05; 
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -46,7 +41,6 @@
             font-size: 1rem;
             transform: rotate(-30deg);
         }
-        /* ---------------------------------- */
 
         .profile-section { padding: 30px 20px; width: 100%; display: flex; flex-direction: column; align-items: center; }
         .profile-img { width: 135px; height: 135px; border-radius: 50%; border: 3px solid var(--gold); object-fit: cover; margin-bottom: 15px; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); }
@@ -112,6 +106,7 @@
                 <button class="btn-index" onclick="loadDiwan('beyond')">خَلْفَ حُدُودِ البَوْح</button>
                 <button class="btn-index" onclick="loadDiwan('anfwan')">عُـنْـفُـوَانُ الـقَـوَافِـي</button>
                 <button class="btn-index" onclick="loadDiwan('baqaya')">بَـقَـايَـا إِنْـسَـان</button>
+                <button class="btn-index" onclick="loadDiwan('maraya')" id="maraya-btn">مَرَايَا الوِجْدَانِ</button>
             </div>
         </div>
 
@@ -131,11 +126,7 @@
 
         <div id="poem-view-page" class="page">
             <div class="poem-card">
-                <div class="watermark">
-                    أمان سمير شيخ الأرض أمان سمير شيخ الأرض أمان سمير شيخ الأرض
-                    أمان سمير شيخ الأرض أمان سمير شيخ الأرض أمان سمير شيخ الأرض
-                    أمان سمير شيخ الأرض أمان سمير شيخ الأرض أمان سمير شيخ الأرض
-                </div>
+                <div class="watermark">أَمَان سَمِير شَيْخ الأَرْض</div>
                 <h2 id="p-title" class="poem-title"></h2>
                 <div id="p-text" class="poem-text" style="text-align: center;"></div>
             </div>
@@ -146,11 +137,11 @@
     <div class="bottom-section">
         <div style="text-align: center; margin-bottom: 5px;">للتواصل معنا عبر</div>
         <div class="social-buttons" style="margin-top: 5px;">
-            <a href="https: //wa.me/19143706101" class="social-btn wa">WA</a>
+            <a href="https://wa.me/19143706101" class="social-btn wa">WA</a>
             <a href="https://www.facebook.com/share/1CzgC4RsRS/" class="social-btn fb">FB</a>
             <a href="mailto:aman.sheikh.elard@gmail.com" class="social-btn em">Email</a>
         </div>
-        <div style="font-size: 0.9rem; font-weight: bold; color: var(--gold);">© جَمِيعُ حُقُوقِ النَّشْرِ وَالطَّبْعِ مَحْفُوظَةٌ لِلشَّاعِرِ أمان سمير شيخ الأرض</div>
+        <div style="font-size: 0.9rem; font-weight: bold; color: var(--gold);">© جَمِيعُ حُقُوقِ النَّشْرِ وَالطَّبْعِ مَحْفُوظَةٌ لِلشَّاعِرِ أَمَان سَمِير شَيْخ الأَرْض</div>
     </div>
 </div>
 
@@ -162,16 +153,15 @@
 <script src="beyond.js"></script>
 <script src="anfwan.js"></script>
 <script src="baqayaInsan.js"></script>
+<script src="maraya.js"></script>
 
 <script>
-    // --- منع النسخ وتصوير الشاشة ---
     document.addEventListener('contextmenu', e => {
-        alert("عذراً.. جَمِيعُ حُقُوقِ النَّشْرِ مَحْفُوظَةٌ لِلشَّاعِرِ أمان سمير شيخ الأرض.");
+        alert("عذراً.. جَمِيعُ حُقُوقِ النَّشْرِ مَحْفُوظَةٌ لِلشَّاعِرِ أَمَان سَمِير شَيْخ الأَرْض.");
         e.preventDefault();
     });
 
     document.addEventListener('keydown', e => {
-        // منع اختصارات النسخ وتصوير الشاشة (PrtScn)
         if (e.key === "PrintScreen" || e.keyCode === 44) {
             alert("تنبيه: محاولة تصوير الشاشة تنتهك حقوق الملكية.");
             e.preventDefault();
@@ -198,7 +188,16 @@
     let currentDiwan = [];
 
     function loadDiwan(type) {
-        if (type === 'spirit') { currentDiwan = (typeof spiritPoems !== 'undefined') ? spiritPoems : []; document.getElementById('diwan-name').innerText = "غُرْبَةُ الرُّوح"; }
+        if (type === 'maraya') {
+            // فحص إذا كان ملف مرايا الوجدان موجود وفيه قصائد
+            if (typeof marayaPoems === 'undefined' || marayaPoems.length === 0) {
+                alert("دِيوَانُ (مَرَايَا الوِجْدَانِ) قَيْدُ التَّحْضِيرِ حَالِيّاً وَسَيُنْشَرُ قَرِيباً بِإِذْنِ اللهِ.");
+                return;
+            }
+            currentDiwan = marayaPoems;
+            document.getElementById('diwan-name').innerText = "مَرَايَا الوِجْدَانِ";
+        }
+        else if (type === 'spirit') { currentDiwan = (typeof spiritPoems !== 'undefined') ? spiritPoems : []; document.getElementById('diwan-name').innerText = "غُرْبَةُ الرُّوح"; }
         else if (type === 'echo') { currentDiwan = (typeof echoPoems !== 'undefined') ? echoPoems : []; document.getElementById('diwan-name').innerText = "صَمْتُ الصَّدَى"; }
         else if (type === 'emotions') { currentDiwan = (typeof emotionsPoems !== 'undefined') ? emotionsPoems : []; document.getElementById('diwan-name').innerText = "نَبْضُ القُلُوب"; }
         else if (type === 'depth') { currentDiwan = (typeof depthPoems !== 'undefined') ? depthPoems : []; document.getElementById('diwan-name').innerText = "عُمْقُ المَشَاعِر"; }
