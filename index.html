@@ -60,12 +60,21 @@
         .page { display: none; width: 100%; }
         .page.active { display: block; animation: fadeIn 0.5s; }
 
+        /* التنسيق الجديد للقوائم لتصبح بجانب بعضها */
+        .main-menu-container, #list-area {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* تجعلها عمودين */
+            gap: 12px;
+            width: 100%;
+        }
+
         .btn-index { 
             width: 100%; background: white; color: var(--text-dark); 
             border: 2px double var(--gold); 
-            padding: 15px; margin-bottom: 15px; border-radius: 15px; 
-            font-size: 1.3rem; cursor: pointer; font-family: 'Amiri', serif; 
-            display: block; transition: 0.3s;
+            padding: 12px 8px; margin-bottom: 0; border-radius: 15px; 
+            font-size: 1.1rem; cursor: pointer; font-family: 'Amiri', serif; 
+            display: flex; align-items: center; justify-content: center;
+            transition: 0.3s; min-height: 70px; /* لتوحيد ارتفاع الأزرار */
         }
         
         .poem-card { 
@@ -77,12 +86,12 @@
             position: relative;
         }
         
-        .poem-title { color: var(--gold-dark); font-size: 1.8rem; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; font-family: 'Amiri', serif; z-index: 1; position: relative; }
+        .poem-title { color: var(--gold-dark); font-size: 1.8rem; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; font-family: 'Amiri', serif; z-index: 1; position: relative; width: 100%; grid-column: span 2; }
         .poem-text { line-height: 2.4; white-space: pre-line; color: var(--text-dark); font-size: 1.25rem; text-align: justify; font-family: 'Amiri', serif; z-index: 1; position: relative; }
         
         .nav-controls { display: flex; justify-content: center; gap: 10px; margin-top: 20px; width: 100%; }
         .btn-nav { flex: 1; background: #eee; border: none; padding: 12px; border-radius: 10px; cursor: pointer; font-family: 'Amiri', serif; font-size: 1.1rem; }
-        .btn-nav-index { background: var(--gold-dark); color: white; }
+        .btn-nav-index { background: var(--gold-dark); color: white; margin-top: 15px; grid-column: span 2; }
 
         .bottom-section { width: 100%; padding: 20px 0; background: var(--black); color: var(--gold); display: flex; flex-direction: column; align-items: center; }
         .social-buttons { display: flex; justify-content: center; gap: 15px; margin: 15px 0; }
