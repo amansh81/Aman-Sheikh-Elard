@@ -4,10 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>دِيوَانُ الشَّاعِرِ أَمَان سَمِير شَيْخ الأَرْض - الموقع الرسمي</title>
+    <title>أَمَان سَمِير شَيْخ الأَرْض - المَوْقِعُ الرَّسْمِيُّ</title>
     <meta name="description" content="الموقع الرسمي للشاعر أمان سمير شيخ الأرض. يضم الدواوين الشعرية: نبض القلوب، غربة الروح، صمت الصدى، مرايا الوجدان، وغيرها من الأعمال الأدبية.">
     <meta name="keywords" content="أمان سمير شيخ الأرض, الشاعر أمان سمير, نبض القلوب, دواوين شعرية, قصائد عربية, مرايا الوجدان">
     <meta name="author" content="أمان سمير شيخ الأرض">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "أمان سمير شيخ الأرض",
+      "alternateName": "Amansh81",
+      "url": "https://amansh81.github.io/Aman-Sheikh-Elard/",
+      "author": {
+        "@type": "Person",
+        "name": "أمان سمير شيخ الأرض"
+      }
+    }
+    </script>
+
     <link rel="canonical" href="https://amansh81.github.io/Aman-Sheikh-Elard/" />
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <style>
@@ -33,6 +48,7 @@
             text-align: center; min-height: 100vh;
         }
         
+        /* الحفاظ على الكتابة المخفية خلف القصائد */
         .watermark {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -60,10 +76,9 @@
         .page { display: none; width: 100%; }
         .page.active { display: block; animation: fadeIn 0.5s; }
 
-        /* التنسيق الجديد للقوائم لتصبح بجانب بعضها */
         .main-menu-container, #list-area {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* تجعلها عمودين */
+            grid-template-columns: repeat(2, 1fr); 
             gap: 12px;
             width: 100%;
         }
@@ -74,7 +89,7 @@
             padding: 12px 8px; margin-bottom: 0; border-radius: 15px; 
             font-size: 1.1rem; cursor: pointer; font-family: 'Amiri', serif; 
             display: flex; align-items: center; justify-content: center;
-            transition: 0.3s; min-height: 70px; /* لتوحيد ارتفاع الأزرار */
+            transition: 0.3s; min-height: 70px; 
         }
         
         .poem-card { 
