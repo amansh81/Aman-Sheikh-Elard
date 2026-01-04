@@ -3,18 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>أمان سمير شيخ الأرض - الموقع الرسمي</title>
     
-    <title>أَمَان سَمِير شَيْخ الأَرْض - المَوْقِعُ الرَّسْمِيُّ</title>
-    <meta name="description" content="الموقع الرسمي للشاعر أمان سمير شيخ الأرض. يضم الدواوين الشعرية: نبض القلوب، غربة الروح، صمت الصدى، مرايا الوجدان، وغيرها من الأعمال الأدبية.">
-    <meta name="keywords" content="أمان سمير شيخ الأرض, الشاعر أمان سمير, نبض القلوب, دواوين شعرية, قصائد عربية, مرايا الوجدان">
-    <meta name="author" content="أمان سمير شيخ الأرض">
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "أمان سمير شيخ الأرض",
-      "alternateName": "Amansh81",
       "url": "https://amansh81.github.io/Aman-Sheikh-Elard/",
       "author": {
         "@type": "Person",
@@ -25,88 +20,45 @@
 
     <link rel="canonical" href="https://amansh81.github.io/Aman-Sheikh-Elard/" />
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
     <style>
-        :root {
-            --gold: #d4af37; --gold-dark: #b8860b;
-            --black: #0a0a0a; --creamy: #fdf5e6;
-            --text-dark: #333;
-        }
+        :root { --gold: #d4af37; --gold-dark: #b8860b; --black: #0a0a0a; --creamy: #fdf5e6; --text-dark: #333; }
         * { box-sizing: border-box; }
-        body { 
-            background-color: var(--black); 
-            margin: 0; padding: 0; 
-            font-family: 'Amiri', serif; 
-            direction: rtl; 
-            overflow-x: hidden;
-            width: 100%;
-            -webkit-user-select: none; user-select: none; 
-        }
-        .app-container { 
-            width: 100%; max-width: 500px; 
-            margin: 0 auto; display: flex; 
-            flex-direction: column; align-items: center; 
-            text-align: center; min-height: 100vh;
-        }
+        body { background-color: var(--black); margin: 0; padding: 0; font-family: 'Amiri', serif; direction: rtl; overflow-x: hidden; width: 100%; -webkit-user-select: none; user-select: none; }
+        .app-container { width: 100%; max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; min-height: 100vh; }
         
-        /* الحفاظ على الكتابة المخفية خلف القصائد */
-        .watermark {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none;
-            opacity: 0.05; 
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-content: center;
-            z-index: 0;
-            font-size: 1rem;
-            transform: rotate(-30deg);
-        }
+        /* العلامة المائية المتكررة */
+        .watermark-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; overflow: hidden; opacity: 0.07; }
+        .watermark-content { width: 200%; height: 200%; display: flex; flex-wrap: wrap; transform: rotate(-25deg); position: absolute; top: -50%; left: -50%; justify-content: space-around; }
+        .watermark-item { padding: 20px; font-size: 1.1rem; white-space: nowrap; color: var(--black); }
 
         .profile-section { padding: 30px 20px; width: 100%; display: flex; flex-direction: column; align-items: center; }
         .profile-img { width: 135px; height: 135px; border-radius: 50%; border: 3px solid var(--gold); object-fit: cover; margin-bottom: 15px; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); }
         h1 { font-size: 2.1rem; color: white; margin: 10px 0; width: 100%; font-family: 'Amiri', serif; }
         .btn-gold-outline { background: transparent; color: var(--gold); border: 1.5px solid var(--gold); padding: 8px 25px; border-radius: 50px; cursor: pointer; font-size: 1.1rem; margin-bottom: 15px; font-family: 'Amiri', serif; }
         
-        .content-area { 
-            background: var(--creamy); width: 100%; 
-            border-radius: 30px 30px 0 0; padding: 30px 20px; 
-            flex-grow: 1; min-height: 450px;
-        }
-        .page { display: none; width: 100%; }
+        .content-area { background: var(--creamy); width: 100%; border-radius: 30px 30px 0 0; padding: 30px 20px; flex-grow: 1; min-height: 450px; position: relative; }
+        .page { display: none; width: 100%; position: relative; z-index: 1; }
         .page.active { display: block; animation: fadeIn 0.5s; }
 
-        .main-menu-container, #list-area {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); 
-            gap: 12px;
-            width: 100%;
-        }
+        .main-menu-container, #list-area { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; width: 100%; }
 
         .btn-index { 
-            width: 100%; background: white; color: var(--text-dark); 
-            border: 2px double var(--gold); 
-            padding: 12px 8px; margin-bottom: 0; border-radius: 15px; 
-            font-size: 1.1rem; cursor: pointer; font-family: 'Amiri', serif; 
-            display: flex; align-items: center; justify-content: center;
-            transition: 0.3s; min-height: 70px; 
+            width: calc(50% - 10px); background: white; color: var(--text-dark); border: 2px solid #e0c56e; 
+            padding: 12px 5px; border-radius: 15px; font-size: 1.15rem; cursor: pointer; font-family: 'Amiri', serif; 
+            display: flex; align-items: center; justify-content: center; min-height: 70px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
+
+        /* توسيط الزر التاسع */
+        .btn-index:last-child:nth-child(odd) { margin: 0 auto; }
+
+        .poem-card { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 20px; width: 100%; border: 4px double var(--gold); position: relative; overflow: hidden; }
+        .poem-title { color: var(--gold-dark); font-size: 1.8rem; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; font-family: 'Amiri', serif; position: relative; z-index: 2; }
+        .poem-text { line-height: 2.4; white-space: pre-line; color: var(--text-dark); font-size: 1.25rem; text-align: justify; font-family: 'Amiri', serif; position: relative; z-index: 2; }
         
-        .poem-card { 
-            background: white; padding: 25px; 
-            border-radius: 20px; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
-            margin-bottom: 20px; width: 100%;
-            border: 4px double var(--gold); 
-            position: relative;
-        }
-        
-        .poem-title { color: var(--gold-dark); font-size: 1.8rem; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; font-family: 'Amiri', serif; z-index: 1; position: relative; width: 100%; grid-column: span 2; }
-        .poem-text { line-height: 2.4; white-space: pre-line; color: var(--text-dark); font-size: 1.25rem; text-align: justify; font-family: 'Amiri', serif; z-index: 1; position: relative; }
-        
-        .nav-controls { display: flex; justify-content: center; gap: 10px; margin-top: 20px; width: 100%; }
+        .nav-controls { display: flex; justify-content: center; gap: 10px; margin-top: 20px; position: relative; z-index: 2; }
         .btn-nav { flex: 1; background: #eee; border: none; padding: 12px; border-radius: 10px; cursor: pointer; font-family: 'Amiri', serif; font-size: 1.1rem; }
-        .btn-nav-index { background: var(--gold-dark); color: white; margin-top: 15px; grid-column: span 2; }
+        .btn-nav-index { background: var(--gold-dark); color: white; margin-top: 15px; width: 100%; }
 
         .bottom-section { width: 100%; padding: 20px 0; background: var(--black); color: var(--gold); display: flex; flex-direction: column; align-items: center; }
         .social-buttons { display: flex; justify-content: center; gap: 15px; margin: 15px 0; }
@@ -121,41 +73,40 @@
     <div class="profile-section">
         <img src="me.jpg" alt="أمان سمير شيخ الأرض" class="profile-img">
         <h1>أمان سمير شيخ الأرض</h1>
-        <button class="btn-gold-outline" onclick="showPage('bio')">نُبْذَةٌ عَنِ الشَّاعِرِ</button>
+        <button class="btn-gold-outline" onclick="showPage('bio')">نُبْذَةٌ عَنِ الشَّاعِرِ</button>
     </div>
 
     <div class="content-area">
         <div id="main-index" class="page active">
-            <div style="font-size: 1.4rem; color: var(--gold-dark); margin-bottom: 15px; font-weight: bold;">فِهْرِسُ الدَّواوِينِ</div>
+            <div style="font-size: 1.4rem; color: var(--gold-dark); margin-bottom: 15px; font-weight: bold;">فِهْرِسُ الدَّوَاوِينِ</div>
             <div class="main-menu-container">
-                <button class="btn-index" onclick="loadDiwan('spirit')">غُرْبَةُ الرُّوح</button>
-                <button class="btn-index" onclick="loadDiwan('echo')">صَمْتُ الصَّدَى</button>
-                <button class="btn-index" onclick="loadDiwan('emotions')">نَبْضُ القُلُوب</button>
-                <button class="btn-index" onclick="loadDiwan('depth')">عُمْقُ المَشَاعِر</button>
-                <button class="btn-index" onclick="loadDiwan('beyond')">خَلْفَ حُدُودِ البَوْح</button>
-                <button class="btn-index" onclick="loadDiwan('anfwan')">عُـنْـفُـوَانُ الـقَـوَافِـي</button>
-                <button class="btn-index" onclick="loadDiwan('baqaya')">بَـقَـايَـا إِنْـسَـان</button>
-                <button class="btn-index" onclick="loadDiwan('maraya')" id="maraya-btn">مَرَايَا الوِجْدَانِ</button>
+                <button class="btn-index" onclick="loadDiwan('spirit')">غُرْبَةُ الرُّوحِ</button>
+                <button class="btn-index" onclick="loadDiwan('echo')">صَمْتُ الصَّدَى</button>
+                <button class="btn-index" onclick="loadDiwan('emotions')">نَبْضُ الْقُلُوبِ</button>
+                <button class="btn-index" onclick="loadDiwan('depth')">عُمْقُ الْمَشَاعِرِ</button>
+                <button class="btn-index" onclick="loadDiwan('beyond')">خَلْفَ حُدُودِ الْبَوْحِ</button>
+                <button class="btn-index" onclick="loadDiwan('anfwan')">عُنْفُوانُ الْقَوَافِي</button>
+                <button class="btn-index" onclick="loadDiwan('baqaya')">بَقَايا إِنْسَانٍ</button>
+                <button class="btn-index" onclick="loadDiwan('maraya')">مَرَايَا الْوِجْدَانِ</button>
+<button class="btn-index" onclick="loadDiwan('malaz')">الْمَلَاذُ الْأَخِيرُ</button>
+
             </div>
         </div>
 
         <div id="bio" class="page">
-            <div class="poem-card">
-                <h2 class="poem-title">نُبْذَةٌ عَنِ الشَّاعِرِ</h2>
-                <div id="bio-content" class="poem-text">جاري تحميل النبذة...</div>
-            </div>
-            <button class="btn-nav btn-nav-index" onclick="showPage('main-index')">رُجُوعٌ لِلرَّئِيسِيَّةِ</button>
+            <div class="poem-card"><h2 class="poem-title">نُبْذَةٌ عَنِ الشَّاعِرِ</h2><div id="bio-content" class="poem-text">جاري التحميل...</div></div>
+            <button class="btn-nav btn-nav-index" onclick="showPage('main-index')">الرُّجُوعُ لِلرَّئِيسِيَّةِ</button>
         </div>
 
         <div id="diwan-index-page" class="page">
             <h2 id="diwan-name" class="poem-title"></h2>
             <div id="list-area"></div>
-            <button class="btn-nav btn-nav-index" onclick="showPage('main-index')">الرَّئِيسِيَّة</button>
+            <button class="btn-nav btn-nav-index" onclick="showPage('main-index')">الرَّئِيسِيَّةُ</button>
         </div>
 
         <div id="poem-view-page" class="page">
             <div class="poem-card">
-                <div class="watermark">أَمَان سَمِير شَيْخ الأَرْض</div>
+                <div class="watermark-overlay" id="watermark-box"></div>
                 <h2 id="p-title" class="poem-title"></h2>
                 <div id="p-text" class="poem-text" style="text-align: center;"></div>
             </div>
@@ -164,80 +115,61 @@
     </div>
 
     <div class="bottom-section">
-        <div style="text-align: center; margin-bottom: 5px;">للتواصل معنا عبر</div>
+        <div style="text-align: center; margin-bottom: 5px;">لِلتَّوَاصُلِ مَعَنَا عَبْرَ</div>
         <div class="social-buttons" style="margin-top: 5px;">
             <a href="https://wa.me/19143706101" class="social-btn wa">WA</a>
             <a href="https://www.facebook.com/share/1CzgC4RsRS/" class="social-btn fb">FB</a>
             <a href="mailto:aman.sheikh.elard@gmail.com" class="social-btn em">Email</a>
         </div>
-        <div style="font-size: 0.9rem; font-weight: bold; color: var(--gold);">© جَمِيعُ حُقُوقِ النَّشْرِ وَالطَّبْعِ مَحْفُوظَةٌ لِلشَّاعِرِ أَمَان سَمِير شَيْخ الأَرْض</div>
+        <div style="font-size: 0.9rem; font-weight: bold; color: var(--gold);">© جَمِيعُ حُقُوقِ النَّشْرِ وَالطِّبَاعَةِ مَحْفُوظَةٌ لِلشَّاعِرِ أَمَان سَمِير شَيْخ الْأَرْض</div>
     </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script src="spirit.js"></script>
-<script src="echo.js"></script>
-<script src="emotions.js"></script>
-<script src="depth.js"></script>
-<script src="beyond.js"></script>
-<script src="anfwan.js"></script>
-<script src="baqayaInsan.js"></script>
-<script src="maraya.js"></script>
+<script src="spirit.js"></script><script src="echo.js"></script><script src="emotions.js"></script>
+<script src="depth.js"></script><script src="beyond.js"></script><script src="anfwan.js"></script>
+<script src="baqayaInsan.js"></script><script src="maraya.js"></script><script src="malaz.js"></script>
 
 <script>
-    document.addEventListener('contextmenu', e => {
-        alert("عذراً.. جَمِيعُ حُقُوقِ النَّشْرِ مَحْفُوظَةٌ لِلشَّاعِرِ أَمَان سَمِير شَيْخ الأَرْض.");
-        e.preventDefault();
-    });
+    document.addEventListener('contextmenu', e => { alert("جميع حقوق النشر محفوظة للشاعر أمان سمير شيخ الأرض."); e.preventDefault(); });
+    document.addEventListener('keydown', e => { if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 'p')) e.preventDefault(); });
 
-    document.addEventListener('keydown', e => {
-        if (e.key === "PrintScreen" || e.keyCode === 44) {
-            alert("تنبيه: محاولة تصوير الشاشة تنتهك حقوق الملكية.");
-            e.preventDefault();
-        }
-        if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 'p')) {
-            alert("هذا المحتوى محمي بحقوق النشر.");
-            e.preventDefault();
-        }
-    });
+    function generateWatermark() {
+        const box = document.getElementById('watermark-box');
+        if(!box) return;
+        let content = '<div class="watermark-content">';
+        for (let i = 0; i < 60; i++) { content += '<div class="watermark-item">أمان سمير شيخ الأرض</div>'; }
+        content += '</div>';
+        box.innerHTML = content;
+    }
 
     function showPage(id) {
-        const pages = document.querySelectorAll('.page');
-        pages.forEach(p => p.style.display = 'none');
-        const target = document.getElementById(id);
-        if(target) target.style.display = 'block';
+        document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+        document.getElementById(id).style.display = 'block';
+        if(id === 'poem-view-page') generateWatermark();
         window.scrollTo(0, 0);
     }
 
-    fetch('bio.md')
-        .then(r => r.text())
-        .then(t => { document.getElementById('bio-content').innerHTML = marked.parse(t); })
-        .catch(() => { document.getElementById('bio-content').innerText = 'خطأ في التحميل.'; });
+    fetch('bio.md').then(r => r.text()).then(t => { document.getElementById('bio-content').innerHTML = marked.parse(t); });
 
     let currentDiwan = [];
-
     function loadDiwan(type) {
-        if (type === 'maraya') {
-            if (typeof marayaPoems === 'undefined' || marayaPoems.length === 0) {
-                alert("دِيوَانُ (مَرَايَا الوِجْدَانِ) قَيْدُ التَّحْضِيرِ حَالِيّاً وَسَيُنْشَرُ قَرِيباً بِإِذْنِ اللهِ.");
-                return;
-            }
-            currentDiwan = marayaPoems;
-            document.getElementById('diwan-name').innerText = "مَرَايَا الوِجْدَانِ";
-        }
-        else if (type === 'spirit') { currentDiwan = (typeof spiritPoems !== 'undefined') ? spiritPoems : []; document.getElementById('diwan-name').innerText = "غُرْبَةُ الرُّوح"; }
-        else if (type === 'echo') { currentDiwan = (typeof echoPoems !== 'undefined') ? echoPoems : []; document.getElementById('diwan-name').innerText = "صَمْتُ الصَّدَى"; }
-        else if (type === 'emotions') { currentDiwan = (typeof emotionsPoems !== 'undefined') ? emotionsPoems : []; document.getElementById('diwan-name').innerText = "نَبْضُ القُلُوب"; }
-        else if (type === 'depth') { currentDiwan = (typeof depthPoems !== 'undefined') ? depthPoems : []; document.getElementById('diwan-name').innerText = "عُمْقُ المَشَاعِر"; }
-        else if (type === 'beyond') { currentDiwan = (typeof beyondPoems !== 'undefined') ? beyondPoems : []; document.getElementById('diwan-name').innerText = "خَلْفَ حُدُودِ البَوْح"; }
-        else if (type === 'anfwan') { currentDiwan = (typeof anfwanAlQawafi !== 'undefined') ? anfwanAlQawafi : []; document.getElementById('diwan-name').innerText = "عُـنْـفُـوَانُ الـقَـوَافِـي"; }
-        else if (type === 'baqaya') { currentDiwan = (typeof baqayaInsan !== 'undefined') ? baqayaInsan : []; document.getElementById('diwan-name').innerText = "بَـقَـايَـا إِنْـسَـان"; }
-
+        const types = {
+            'spirit': [typeof spiritPoems !== 'undefined' ? spiritPoems : [], "غُرْبَةُ الرُّوحِ"],
+            'echo': [typeof echoPoems !== 'undefined' ? echoPoems : [], "صَمْتُ الصَّدَى"],
+            'emotions': [typeof emotionsPoems !== 'undefined' ? emotionsPoems : [], "نَبْضُ الْقُلُوبِ"],
+            'depth': [typeof depthPoems !== 'undefined' ? depthPoems : [], "عُمْقُ الْمَشَاعِرِ"],
+            'beyond': [typeof beyondPoems !== 'undefined' ? beyondPoems : [], "خَلْفَ حُدُودِ الْبَوْحِ"],
+            'anfwan': [typeof anfwanAlQawafi !== 'undefined' ? anfwanAlQawafi : [], "عُنْفُوانُ الْقَوَافِي"],
+            'baqaya': [typeof baqayaInsan !== 'undefined' ? baqayaInsan : [], "بَقَايا إِنْسَانٍ"],
+            'maraya': [typeof marayaPoems !== 'undefined' ? marayaPoems : [], "مَرَايَا الْوِجْدَانِ"],
+            'malaz': [typeof malazPoems !== 'undefined' ? malazPoems : [], "الْمَلَاذُ الْأَخِيرُ"]
+        };
+        currentDiwan = types[type][0];
+        document.getElementById('diwan-name').innerText = types[type][1];
         const list = document.getElementById('list-area');
         list.innerHTML = "";
-        currentDiwan.forEach((p, i) => {
-            list.innerHTML += `<button class="btn-index" onclick="showPoem(${i})">${p.title}</button>`;
-        });
+        currentDiwan.forEach((p, i) => { list.innerHTML += `<button class="btn-index" onclick="showPoem(${i})">${p.title}</button>`; });
         showPage('diwan-index-page');
     }
 
@@ -245,13 +177,10 @@
         const p = currentDiwan[idx];
         document.getElementById('p-title').innerText = p.title;
         document.getElementById('p-text').innerText = p.text;
-        
         const nav = document.getElementById('nav-btns');
-        const prev = idx > 0 ? `<button class="btn-nav" onclick="showPoem(${idx-1})">السَّابِق</button>` : `<div style="flex:1"></div>`;
-        const mid = `<button class="btn-nav btn-nav-index" onclick="showPage('diwan-index-page')">الفِهْرِس</button>`;
-        const next = idx < currentDiwan.length - 1 ? `<button class="btn-nav" onclick="showPoem(${idx+1})">التَّالِي</button>` : `<button class="btn-nav" style="background:var(--gold)" onclick="showPage('main-index')">الرئيسية</button>`;
-        
-        nav.innerHTML = prev + mid + next;
+        nav.innerHTML = (idx > 0 ? `<button class="btn-nav" onclick="showPoem(${idx-1})">السابق</button>` : `<div style="flex:1"></div>`) + 
+                        `<button class="btn-nav btn-nav-index" onclick="showPage('diwan-index-page')">الفهرس</button>` + 
+                        (idx < currentDiwan.length - 1 ? `<button class="btn-nav" onclick="showPoem(${idx+1})">التالي</button>` : `<button class="btn-nav" style="background:var(--gold)" onclick="showPage('main-index')">الرئيسية</button>`);
         showPage('poem-view-page');
     }
 </script>
