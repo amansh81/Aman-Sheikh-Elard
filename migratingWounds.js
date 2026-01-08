@@ -1,5 +1,5 @@
 // ديوان: جِرَاحٌ مُهَاجِرَة - الشاعر أمان سمير شيخ الأرض
-let MigratingWounds = [
+let migratingwounds = [
   {
     id: 1,
     title: "صَرخَةُ المَهْجَر",
