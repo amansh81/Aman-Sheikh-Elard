@@ -79,8 +79,7 @@
 <script src="spirit.js"></script><script src="echo.js"></script><script src="emotions.js"></script>
 <script src="depth.js"></script><script src="beyond.js"></script><script src="anfwan.js"></script>
 <script src="baqayaInsan.js"></script><script src="maraya.js"></script><script src="malaz.js"></script>
-
-<script>
+<script src="MigratingWounds.js"></script> <script>
     const coversList = document.getElementById('covers-list');
     diwanConfig.forEach(item => {
         coversList.innerHTML += `
@@ -110,7 +109,6 @@
 
     let currentDiwan = [];
     function loadDiwan(type) {
-        // استخدام let للتعامل مع البيانات القادمة من الملفات الخارجية بصيغة حديثة
         let types = {
             'ghorbatAlroh': [typeof ghorbatAlrohPoems !== 'undefined' ? ghorbatAlrohPoems : [], "غُرْبَةُ الرُّوحِ"],
             'echo': [typeof echoPoems !== 'undefined' ? echoPoems : [], "صَمْتُ الصَّدَى"],
@@ -120,7 +118,8 @@
             'anfwan': [typeof anfwanAlQawafi !== 'undefined' ? anfwanAlQawafi : [], "عُنْفُوانُ الْقَوَافِي"],
             'baqaya': [typeof baqayaInsan !== 'undefined' ? baqayaInsan : [], "بَقَايا إِنْسَانٍ"],
             'maraya': [typeof marayaPoems !== 'undefined' ? marayaPoems : [], "مَرَايَا الْوِجْدَانِ"],
-            'malaz': [typeof malazPoems !== 'undefined' ? malazPoems : [], "الْمَلَاذُ الْأَخِيرُ"]
+            'malaz': [typeof malazPoems !== 'undefined' ? malazPoems : [], "الْمَلَاذُ الْأَخِيرُ"],
+            'migratingWounds': [typeof diwan10Poems !== 'undefined' ? diwan10Poems : [], "جِرَاحٌ مُهَاجِرَة"]
         };
         currentDiwan = types[type][0];
         document.getElementById('diwan-name').innerText = types[type][1];

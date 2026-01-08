@@ -44,5 +44,10 @@ const diwanConfig = [
         id: 'malaz', 
         title: 'الْمَلَاذُ الْأَخِيرُ', 
         image: '09.jpg' 
+    },
+    { 
+        id: 'migratingWounds', 
+        title: 'جِرَاحٌ مُهَاجِرَة', 
+        image: '10.jpg' 
     }
 ];
