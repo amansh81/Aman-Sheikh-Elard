@@ -80,6 +80,7 @@
 <script src="depth.js"></script><script src="beyond.js"></script><script src="anfwan.js"></script>
 <script src="baqayaInsan.js"></script><script src="maraya.js"></script><script src="malaz.js"></script>
 <script src="migratingwounds.js"></script> 
+<script src="noHarbor.js"></script>
 <script>
     const coversList = document.getElementById('covers-list');
     diwanConfig.forEach(item => {
@@ -120,7 +121,8 @@
             'baqaya': [typeof baqayaInsan !== 'undefined' ? baqayaInsan : [], "بَقَايا إِنْسَانٍ"],
             'maraya': [typeof marayaPoems !== 'undefined' ? marayaPoems : [], "مَرَايَا الْوِجْدَانِ"],
             'malaz': [typeof malazPoems !== 'undefined' ? malazPoems : [], "الْمَلَاذُ الْأَخِيرُ"],
-            'migratingwounds': [typeof migratingwounds !== 'undefined' ? migratingwounds : [], "جِرَاحٌ مُهَاجِرَة"]
+            'migratingwounds': [typeof migratingwounds !== 'undefined' ? migratingwounds : [], "جِرَاحٌ مُهَاجِرَة"],
+            'noHarbor': [typeof noHarborPoems !== 'undefined' ? noHarborPoems : [], "رَاحِلٌ بِلَا مَرْفَأ"]
         };
         currentDiwan = types[type][0];
         document.getElementById('diwan-name').innerText = types[type][1];
