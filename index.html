@@ -81,7 +81,7 @@
 <script src="baqayaInsan.js"></script><script src="maraya.js"></script><script src="malaz.js"></script>
 <script src="migratingwounds.js"></script> 
 <script src="noHarbor.js"></script>
-<script>
+<script src="waiting.js"></script> <script>
     const coversList = document.getElementById('covers-list');
     diwanConfig.forEach(item => {
         coversList.innerHTML += `
@@ -122,7 +122,8 @@
             'maraya': [typeof marayaPoems !== 'undefined' ? marayaPoems : [], "مَرَايَا الْوِجْدَانِ"],
             'malaz': [typeof malazPoems !== 'undefined' ? malazPoems : [], "الْمَلَاذُ الْأَخِيرُ"],
             'migratingwounds': [typeof migratingwounds !== 'undefined' ? migratingwounds : [], "جِرَاحٌ مُهَاجِرَة"],
-            'noHarbor': [typeof noHarborPoems !== 'undefined' ? noHarborPoems : [], "رَاحِلٌ بِلَا مَرْفَأ"]
+            'noHarbor': [typeof noHarborPoems !== 'undefined' ? noHarborPoems : [], "رَاحِلٌ بِلَا مَرْفَأ"],
+            'waiting': [typeof waitingPoems !== 'undefined' ? waitingPoems : [], "عَلَى كَفِّ الانْتِظَارِ"] // إضافة الربط البرمجي هنا
         };
         currentDiwan = types[type][0];
         document.getElementById('diwan-name').innerText = types[type][1];

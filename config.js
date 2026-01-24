@@ -1,4 +1,3 @@
-
 // ملف إعدادات الدواوين والأغلفة - أمان سمير شيخ الأرض
 const diwanConfig = [
     { id: 'ghorbatAlroh', title: 'غُرْبَةُ الرُّوحِ', image: '01.jpg' },
@@ -11,5 +10,6 @@ const diwanConfig = [
     { id: 'maraya', title: 'مَرَايَا الْوِجْدَانِ', image: '08.jpg' },
     { id: 'malaz', title: 'الْمَلَاذُ الْأَخِيرُ', image: '09.jpg' },
     { id: 'migratingwounds', title: 'جِرَاحٌ مُهَاجِرَة', image: '10.jpg' },
-    { id: 'noHarbor', title: 'رَاحِلٌ بِلَا مَرْفَأ', image: '11.jpg' }
+    { id: 'noHarbor', title: 'رَاحِلٌ بِلَا مَرْفَأ', image: '11.jpg' },
+    { id: 'waiting', title: 'عَلَى كَفِّ الانْتِظَارِ', image: '12.jpg' }
 ];
