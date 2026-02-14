@@ -22,8 +22,36 @@
         .page { display: none; width: 100%; position: relative; z-index: 1; }
         .page.active { display: block; animation: fadeIn 0.5s; }
         .covers-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 25px; }
-        .book-cover-btn { width: 140px; cursor: pointer; display: flex; flex-direction: column; align-items: center; margin-bottom: 10px; }
-        .book-cover-btn img { width: 100%; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.15); border: 2px solid var(--gold); }
+        
+        /* تصميم الغلاف مع الشريطة المائلة */
+        .book-cover-btn { 
+            width: 140px; 
+            cursor: pointer; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            margin-bottom: 10px; 
+            position: relative; 
+            overflow: hidden; /* ضروري لقص أطراف الشريطة */
+            border-radius: 12px;
+        }
+        .book-cover-btn img { width: 100%; border-radius: 12px; border: 2px solid var(--gold); display: block; }
+        
+        /* كود الشريطة المائلة */
+        .ribbon {
+            position: absolute;
+            top: 12px;
+            right: -25px;
+            background: var(--gold);
+            color: black;
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 2px 30px;
+            transform: rotate(45deg); /* إمالة الشريطة */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+
         .btn-index { width: calc(50% - 10px); background: white; color: var(--text-dark); border: 2px solid #e0c56e; padding: 12px 5px; border-radius: 15px; font-size: 1.15rem; cursor: pointer; font-family: 'Amiri', serif; min-height: 70px; display: flex; align-items: center; justify-content: center; }
         .poem-card { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 20px; border: 4px double var(--gold); position: relative; overflow: hidden; }
         .poem-title { color: var(--gold-dark); font-size: 1.8rem; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; position: relative; z-index: 2; }
@@ -75,24 +103,27 @@
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="config.js"></script>
-<script src="ghorba.js"></script> 
-<script src="spirit.js"></script><script src="echo.js"></script><script src="emotions.js"></script>
+<script src="ghorba.js"></script><script src="spirit.js"></script><script src="echo.js"></script><script src="emotions.js"></script>
 <script src="depth.js"></script><script src="beyond.js"></script><script src="anfwan.js"></script>
 <script src="baqayaInsan.js"></script><script src="maraya.js"></script><script src="malaz.js"></script>
-<script src="migratingwounds.js"></script> 
-<script src="noHarbor.js"></script>
-<script src="waiting.js"></script> <script>
+<script src="migratingwounds.js"></script><script src="noHarbor.js"></script><script src="waiting.js"></script>
+
+<script>
     const coversList = document.getElementById('covers-list');
     
-    // التعديل هنا لقلب الترتيب وجعل آخر ديوان مضاف يظهر أولاً
-    diwanConfig.slice().reverse().forEach(item => {
+    // الترتيب المعكوس + الشريطة المائلة على أول ديوان فقط
+    [...diwanConfig].reverse().forEach((item, index) => {
+        let ribbon = (index === 0) ? `<div class="ribbon">جديد</div>` : '';
+        
         coversList.innerHTML += `
             <div class="book-cover-btn" onclick="loadDiwan('${item.id}')">
+                ${ribbon}
                 <img src="${item.image}">
-                <div style="color:var(--gold-dark); font-size:0.85rem; margin-top:5px;">${item.title}</div>
+                <div style="color:var(--gold-dark); font-size:0.85rem; margin-top:5px; padding: 0 5px;">${item.title}</div>
             </div>`;
     });
 
+    // باقي الوظائف البرمجية (showPage, loadDiwan, etc.) كما هي في ملفك الأصلي تماماً
     document.addEventListener('contextmenu', e => { alert("جميع حقوق النشر محفوظة."); e.preventDefault(); });
     window.addEventListener('blur', () => { document.getElementById('secure-area').style.filter = 'blur(10px)'; });
     window.addEventListener('focus', () => { document.getElementById('secure-area').style.filter = 'none'; });
