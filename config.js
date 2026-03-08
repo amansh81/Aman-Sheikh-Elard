@@ -11,5 +11,6 @@ const diwanConfig = [
     { id: 'malaz', title: 'الْمَلَاذُ الْأَخِيرُ', image: '09.jpg' },
     { id: 'migratingwounds', title: 'جِرَاحٌ مُهَاجِرَة', image: '10.jpg' },
     { id: 'noHarbor', title: 'رَاحِلٌ بِلَا مَرْفَأ', image: '11.jpg' },
-    { id: 'waiting', title: 'عَلَى كَفِّ الانْتِظَارِ', image: '12.jpg' }
+    { id: 'waiting', title: 'عَلَى كَفِّ الانْتِظَارِ', image: '12.jpg' },
+    { id: 'ghorbatAlAbwab', title: 'غُـرْبَةُ الأبْـوَابِ', image: '13.jpg' }
 ];

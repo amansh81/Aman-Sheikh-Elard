@@ -23,7 +23,6 @@
         .page.active { display: block; animation: fadeIn 0.5s; }
         .covers-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 25px; }
         
-        /* تصميم الغلاف مع الشريطة المائلة */
         .book-cover-btn { 
             width: 140px; 
             cursor: pointer; 
@@ -32,12 +31,11 @@
             align-items: center; 
             margin-bottom: 10px; 
             position: relative; 
-            overflow: hidden; /* ضروري لقص أطراف الشريطة */
+            overflow: hidden; 
             border-radius: 12px;
         }
         .book-cover-btn img { width: 100%; border-radius: 12px; border: 2px solid var(--gold); display: block; }
         
-        /* كود الشريطة المائلة */
         .ribbon {
             position: absolute;
             top: 12px;
@@ -47,7 +45,7 @@
             font-size: 0.7rem;
             font-weight: bold;
             padding: 2px 30px;
-            transform: rotate(45deg); /* إمالة الشريطة */
+            transform: rotate(45deg); 
             box-shadow: 0 2px 4px rgba(0,0,0,0.2);
             z-index: 10;
         }
@@ -107,11 +105,11 @@
 <script src="depth.js"></script><script src="beyond.js"></script><script src="anfwan.js"></script>
 <script src="baqayaInsan.js"></script><script src="maraya.js"></script><script src="malaz.js"></script>
 <script src="migratingwounds.js"></script><script src="noHarbor.js"></script><script src="waiting.js"></script>
+<script src="ghorbatAlAbwab.js"></script>
 
 <script>
     const coversList = document.getElementById('covers-list');
     
-    // الترتيب المعكوس + الشريطة المائلة على أول ديوان فقط
     [...diwanConfig].reverse().forEach((item, index) => {
         let ribbon = (index === 0) ? `<div class="ribbon">جديد</div>` : '';
         
@@ -123,7 +121,6 @@
             </div>`;
     });
 
-    // باقي الوظائف البرمجية (showPage, loadDiwan, etc.) كما هي في ملفك الأصلي تماماً
     document.addEventListener('contextmenu', e => { alert("جميع حقوق النشر محفوظة."); e.preventDefault(); });
     window.addEventListener('blur', () => { document.getElementById('secure-area').style.filter = 'blur(10px)'; });
     window.addEventListener('focus', () => { document.getElementById('secure-area').style.filter = 'none'; });
@@ -156,7 +153,9 @@
             'malaz': [typeof malazPoems !== 'undefined' ? malazPoems : [], "الْمَلَاذُ الْأَخِيرُ"],
             'migratingwounds': [typeof migratingwounds !== 'undefined' ? migratingwounds : [], "جِرَاحٌ مُهَاجِرَة"],
             'noHarbor': [typeof noHarborPoems !== 'undefined' ? noHarborPoems : [], "رَاحِلٌ بِلَا مَرْفَأ"],
-            'waiting': [typeof waitingPoems !== 'undefined' ? waitingPoems : [], "عَلَى كَفِّ الانْتِظَارِ"] 
+            'waiting': [typeof waitingPoems !== 'undefined' ? waitingPoems : [], "عَلَى كَفِّ الانْتِظَارِ"],
+            // تفعيل الربط للديوان الجديد غُـرْبَةُ الأبْـوَابِ
+            'ghorbatAlAbwab': [typeof ghorbatAlAbwabPoems !== 'undefined' ? ghorbatAlAbwabPoems : [], "غُـرْبَةُ الأبْـوَابِ"]
         };
         currentDiwan = types[type][0];
         document.getElementById('diwan-name').innerText = types[type][1];
